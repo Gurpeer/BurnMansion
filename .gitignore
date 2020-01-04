@@ -2,3 +2,4 @@
 *.rpyc
 log.txt
 *.rpyb
+game/saves/
