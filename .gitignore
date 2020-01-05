@@ -3,3 +3,6 @@
 log.txt
 *.rpyb
 game/saves/
+errors.txt
+traceback.txt
+game/0GUI dev tools/

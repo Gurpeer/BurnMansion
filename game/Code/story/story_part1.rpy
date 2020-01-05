@@ -129,5 +129,5 @@ label story_1:
     pause
     centered "{=scene_text}Off to pester now.{/=scene_text}" with dissolve
 
-
+    jump office
 
