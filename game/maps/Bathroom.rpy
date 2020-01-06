@@ -4,7 +4,7 @@ default bathroom_clay_loc = place("Clay", (315, 394), Jump('bathroom_clay'), "ma
 default bathroom_ashley_loc = place("Ashley", (766, 346), Jump('bathroom_ashley'), "maps/bathroom/washroom ashley_h.png")
 
 
-default bathroom = maps(
+default bathroom_map = maps(
     "Bathroom",
     [
         bathroom_door_loc,
@@ -17,7 +17,7 @@ default bathroom = maps(
 
 label bathroom:
     scene washroom bg
-    show screen map(bathroom)
+    show screen map(bathroom_map)
     pause
 
 label bathroom_lock:

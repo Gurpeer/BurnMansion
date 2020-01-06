@@ -4,7 +4,7 @@ default office_firecamp_loc = place("Fire Camp", (1392, 742), Jump('office_firec
 default office_picture_loc = place("Picture", (1352, 0), Jump('office_picture'), "maps/office/picture.png")
 default office_arrow_loc = place("Back", (962, 952), Jump('main_hall'), "maps/office/arrow.png")
 
-default office = maps(
+default office_map = maps(
     "Office",
     [
         office_desk_loc,
@@ -17,7 +17,7 @@ default office = maps(
 
 label office:
     scene burn office bg
-    show screen map(office)
+    show screen map(office_map)
     pause
 
 label office_desk:

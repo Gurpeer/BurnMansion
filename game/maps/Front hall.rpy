@@ -4,7 +4,7 @@ default fhall_sword_loc = place("sword", (1364, 329), Jump('fhall_sword'), "maps
 default fhall_ldoor_loc = place("left door", (219, 63), Jump('fhall_ldoor'), "maps/front hallway/left door.png")
 default fhall_rdoor_loc = place("right door", (1565, 0), Jump('fhall_rdoor'), "maps/front hallway/right door.png")
 
-default front_hall = maps(
+default front_hall_map = maps(
     "Office",
     [
         fhall_front_door_loc,
@@ -18,7 +18,7 @@ default front_hall = maps(
 
 label front_hall:
     scene main hall bg
-    show screen map(front_hall)
+    show screen map(front_hall_map)
     pause
 
 label fhall_mindy:

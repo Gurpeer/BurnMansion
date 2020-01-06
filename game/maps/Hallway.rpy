@@ -4,7 +4,7 @@ default hallway_bathroom_loc = place("Hall Bathroom", (285, 243), Jump('bathroom
 default hallway_office_loc = place("Hall Office", (1078, 42), Jump('office'), "maps/hallway/office door.png")
 default hallway_allison_loc = place("Aliison", (978, 266), Jump('hallway_allison'), "maps/hallway/allison n.png")
 
-default main_hall = maps(
+default main_hall_map = maps(
     "Hallway",
     [
         hallway_hall_loc,
@@ -17,7 +17,7 @@ default main_hall = maps(
 
 label main_hall:
     scene hallway bg
-    show screen map(main_hall)
+    show screen map(main_hall_map)
     pause
 
 label hallway_hall_left:

@@ -7,7 +7,7 @@ default fmansion_exit_loc = place("Exit", (360, 960), Jump('fmansion_exit'), "ma
 
 
 
-default front_mansion = maps(
+default front_mansion_map = maps(
     "Front Mansion",
     [
         fmansion_door_loc,
@@ -21,7 +21,7 @@ default front_mansion = maps(
 
 label front_mansion:
     scene outside mansion bg
-    show screen map(front_mansion)
+    show screen map(front_mansion_map)
     pause
 
 label fmansion_guard:
