@@ -18,9 +18,7 @@
 screen map(m):
     modal True
     tag place
-    frame:
-        align 1.0,0.0 margin 100,100
-        text m.name
+    use map_stats(m)
     for i in m.p:
         button:
             pos i.xy anchor 0.0,0.0 padding 0,0
