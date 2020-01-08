@@ -9,7 +9,7 @@ screen map_stats(m):
     modal True
     tag place
     fixed:
-        align 0.0,0.0 offset 80,80 fit_first True
+        align 1.0,0.0 offset -40,40 fit_first True
         add "stats/ui_base.png"
         button:
             background None foreground None xoffset -135
@@ -25,7 +25,7 @@ screen map_stats(m):
                 add "stats/ui_skip.png"
                 action Skip() alternate Skip(fast=True, confirm=True)
         hbox:
-            offset 40, -38 spacing 0
+            offset 40, -34 spacing 0
             add "stats/money.png"
             text str(mr_burns.cash)
         text m.name xalign 0.0 offset 175, 5

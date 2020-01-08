@@ -18,7 +18,7 @@
 screen map(m):
     modal True
     tag place
-    use map_stats(m)
+    
     for i in m.p:
         button:
             pos i.xy anchor 0.0,0.0 padding 0,0
@@ -28,3 +28,4 @@ screen map(m):
             else:
                 text i.name
             action Hide("map"), i.act
+    use map_stats(m)
