@@ -96,7 +96,7 @@ style default:
     align(.5,.5)
     padding(20,20)
     spacing 10
-    font "fonts/GOODDP__.TTF"
+    font "fonts/gadugib.TTF"
     size 30
     
     color thm.t_idl
