@@ -6,7 +6,7 @@ default fhall_rdoor_loc = place("right door", (1565, 0), Jump('fhall_rdoor'), "m
 default fhall_arrow_loc = place("Back", (962, 952), Jump('main_hall'), "maps/office/arrow.png")
 
 default front_hall_map = maps(
-    "Office",
+    "Front Hall",
     [
         fhall_front_door_loc,
         fhall_mindy_loc,
