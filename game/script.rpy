@@ -42,13 +42,15 @@ image allison angry = ConditionSwitch(
     "_last_say_who == 'allison'", "char/allison/angry_t.png",
     "not _last_say_who == 'allison'", "char/allison/angry.png",
     )
+
+image allison surprise = "char/allison/surprise.png"
+
 image side allison = "char/allison/icon.png"
 
 
 
-
-
-
+## Allison Event story
+default allison_story = 0
 
 
 
