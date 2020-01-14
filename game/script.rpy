@@ -5,6 +5,16 @@
 
 image side burn = "char/burn/icon.png"
 
+image mindy_smoke:
+    "char/mindy/smoke.png"
+    time 0.2
+    "char/mindy/smoke1.png"
+    time 0.2
+    "char/mindy/smoke2.png"
+    time 0.2
+    "char/mindy/smoke3.png"
+    time 0.2
+
 image mindy normal = ConditionSwitch(
     "_last_say_who == 'mindy'", "char/mindy/normal_t.png",
     "not _last_say_who == 'mindy'", "char/mindy/normal.png",

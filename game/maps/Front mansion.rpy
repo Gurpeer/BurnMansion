@@ -33,7 +33,8 @@ label fmansion_guard1:
     jump front_mansion
 
 label fmansion_money:
-    burn "I'm money, please take me. "
+    $ mr_burns.got_cash(300)
+    $ front_mansion_map.rem(fmansion_money_loc)
     jump front_mansion
 
 label fmansion_exit:

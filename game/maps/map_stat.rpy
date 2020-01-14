@@ -4,6 +4,8 @@
         def __init__(self, name):
             self.name = name
             self.cash = 0
+        def got_cash(self, a):
+            self.cash += a
 default mr_burns = player_units("Burns")
 screen map_stats(m):
     modal True
@@ -25,8 +27,8 @@ screen map_stats(m):
                 add "stats/ui_skip.png"
                 action Skip() alternate Skip(fast=True, confirm=True)
         hbox:
-            offset 40, -34 spacing 0
+            offset 150, -34 spacing 0 xalign 0.0
             add "stats/money.png"
             text str(mr_burns.cash)
-        text m.name xalign 0.0 offset 175, 5
+        text m.name xalign 0.0 offset 175, 4
 
