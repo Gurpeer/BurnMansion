@@ -29,5 +29,6 @@ screen map(m):
                 add i.icon
             else:
                 text i.name
-            action Hide("map"), i.act
+            if i.act:
+                action Hide("map"), i.act
     use map_stats(m)
