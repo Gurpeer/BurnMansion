@@ -1,20 +1,23 @@
 ﻿image mindy_smoke:
     "char/mindy/smoke.png"
-    pause 0.1
+    pause 0.21
     "char/mindy/smoke1.png"
-    pause 0.1
+    pause 0.21
     "char/mindy/smoke2.png"
-    pause 0.1
+    pause 0.21
     "char/mindy/smoke3.png"
-    pause 0.1
+    pause 0.21
+    "char/mindy/smoke5.png"
+    pause 1.5
     repeat
+
 default fhall_front_door_loc = place("Front door", (885, 533), Jump('front_mansion'), "maps/front hallway/front door.png")
 default fhall_mindy_loc = place("Mindy", (141, 499), Jump('fhall_mindy'), "maps/front hallway/mindy.png")
 default fhall_sword_loc = place("sword", (1364, 329), Jump('fhall_sword'), "maps/front hallway/sword.png")
 default fhall_ldoor_loc = place("left door", (219, 63), Jump('fhall_ldoor'), "maps/front hallway/left door.png")
 default fhall_rdoor_loc = place("right door", (1565, 0), Jump('fhall_rdoor'), "maps/front hallway/right door.png")
 default fhall_arrow_loc = place("Back", (962, 952), Jump('main_hall'), "maps/office/arrow.png")
-default fhall_smoke_loc = place("smoke", (138, 518), None, "mindy_smoke")
+default fhall_smoke_loc = place("smoke", (155, 510), None, "mindy_smoke")
 
 default front_hall_map = maps(
     "Front Hall",
