@@ -30,7 +30,7 @@ label story_1:
     burn "That’s right, this will be as easy as taking candies from drunk old man sitting in the front porch of his retirement house"
     burn "After all, I still have my mansion. Yes, I know just what to do"
     scene burn_office blur with dissolve
-    show burn normal at left with dissolve
+    show burn_base at left
     show mindy normal at right with dissolve
     show allison normal at midright with dissolve
     show ashley normal at center with dissolve

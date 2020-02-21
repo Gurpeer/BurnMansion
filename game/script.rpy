@@ -57,6 +57,7 @@ default allison_story = 0
 
 
 define burn = Character("Burn", color="#fe4911", who_outlines=[ (3, "#ffffff") ], image="burn", box_box_reverse = True, namebox_xalign=0.0)
+define burn1 = Character("Burn", color="#fe4911", who_outlines=[ (3, "#ffffff") ], image="burn")
 define yes_men = Character("Yes men")
 define mindy = Character("Mindy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="mindy")
 define ashley = Character("Ashley", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="ashley")
