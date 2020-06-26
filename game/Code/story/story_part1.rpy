@@ -19,7 +19,7 @@ label story_1:
     scene yesman_3 with dissolve
     yes_men "yes sir, absolutely, no mistake about it."
     scene yesman_2 with dissolve
-    burn "then tell me this. Why on earth has my business, and all my assets, been handed to people I have never even heard of?! That’s not all! I am now in debt! In debt! Of all things! So tell me, how could this happen? Did a make a wrong move?"
+    burn "then tell me this. Why on earth has my business, and all my assets, been handed to people I have never even heard of?! That’s not all! I am now in debt! In debt! Of all things! So tell me, how could this happen? Did I make a wrong move?"
     scene yesman_4 with dissolve  
     yes_men "no sir, definitely not. You made all the right moves sir. Yes sir."  
     scene yesman_5 with dissolve
@@ -31,32 +31,43 @@ label story_1:
     burn "After all, I still have my mansion. Yes, I know just what to do"
     scene burn_office blur with dissolve
     show burn_base at left
+    $ burns_face = "normal"
+    $ burns_hands = "3"
     show mindy normal at right with dissolve
     show allison normal at midright with dissolve
     show ashley normal at center with dissolve
-
+    $ burns_face = "normal_t"
     burn "From today on, you will work in this mansion until the day your contract expires."
     burn "As per the contract, you will work 24/7 during workdays, weekends, and holidays"
     burn "You will also work within questionable safety precautions with no insurance and receive salary below the minimum wages. Any questions?”"
+    $ burns_face = "normal"
     mindy "What about Christmas ?"
+    $ burns_face = "normal_t"
     burn "You will help with getting the Christmas tree and then decorating it"
+    $ burns_face = "normal"
     show ashley angry at center with dissolve
     pause
     ashley "this is bullshit! How can we possibly just accept all of this!?"
-
+    $ burns_face = "normal_t"
     burn "oh, then I guess you would rather go back to the fast food restaurant where you came from?"   
+    $ burns_face = "normal"
     show ashley normal at center with dissolve
     pause
     ashley "……on second thought, it’s basically the same thing"
+    $ burns_face = "normal_t"
     burn "Well then"
     burn "Since you are now the employees of this house, you shall call me ‘the honorable mr burns"
     pause 2.0
 
     burn "Wait wait, no, lord Montgomery burns"
+    $ burns_face = "laugh"
     burn "Yes! That’s it! Brilliant! Alright, enough talking"
+    $ burns_face = "hmm"
     # show burn rage with dissolve
     burn "Now get to it, chop-chop!”"
+    $ burns_face = "angry"
     allison "oh, I forgot to ask"
+    $ burns_face = "normal_t"
     burn "yes ?"
     allison "When will our contract end ?"
     burn "they don't."
@@ -69,11 +80,13 @@ label story_1:
     centered "{=scene_text}Burns leaves the Maid out of his office. Leaving the maid all speechless{/=scene_text}" with dissolve
     centered "{=scene_text} . . . . {p} Weylon shows up to his office{/=scene_text}" with dissolve
     scene burn_office blur with dissolve
-    show burn normal at left with dissolve
+    show burn_base at left
     show weylon normal at right with dissolve
     burn "Now then Weylon"
     burn "Tell me again about my brilliant plan to recliam what's rightfully mine"
+    $ burns_face = "laugh"
     weylon "Certainly sir"
+    $ burns_face = "normal"
     # show weylon talk_calm with dissolve
     weylon "With your mansion as the new base of operation, you will open the rooms available to be used by would be residents and have them pay unreasonably expensive rent"
     weylon "You will then proceed to claim their wealth through coercion, blackmail, assassination, or any other means necessary."
