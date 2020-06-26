@@ -91,40 +91,58 @@ label story_1:
     weylon "With your mansion as the new base of operation, you will open the rooms available to be used by would be residents and have them pay unreasonably expensive rent"
     weylon "You will then proceed to claim their wealth through coercion, blackmail, assassination, or any other means necessary."
     weylon "Afterwards, after you gain their money, properties, and probably their souls, you will reclaim everything one by one until you once again become the de facto king of America because who needs the president when you have capitalism. God bless America"
+    $ burns_face = "normal_t"
     burn "Perfect !"
     burn "Now all we have to do is find people to live here"
+    $ burns_face = "normal"
     weylon "Why don't we try putting up an ad sir ?"
+    $ burns_face = "normal_t"
     burn "and waste more of my money ?"
+    $ burns_face = "angry_t"
     # show burn rage with dissolve
     burn "Preposterous !"
     scene black
     centered "{=scene_text}Burns proceed to throw something at weylon's face{/=scene_text}" with dissolve
     scene burn_office blur with vpunch
-    show burn normal at left with dissolve
-    show weylon angry at right with dissolve
+    $ burns_face = "angry"
+    show burn_base at left
+    show weylon scared at right with dissolve
     # show weylon talk_angry at right with dissolve
     weylon "Ouch !"
+    $ burns_face = "angry_t"
     burn "spread it with of mouth, {p}or just kidnap someone I'm sure there are lots of homeless people around"
+    $ burns_face = "angry"
     weylon "But sir, homeless people don't have money"
     show weylon normal at right
+    $ burns_face = "hmm"
     burn "ah, but they're alive aren't they? "
     burn "Then put them in the power generator or take them to the soul extractor to be used as fuel"
+    $ burns_face = "angry"
     weylon "right away sir."
+    $ burns_face = "normal_t"
     burn "good"
     burn "Now then, it's only a matter of time before I finally return to the billionaire club"
     burn "But for now"
     burn "Maybe I'll pester some of the maid"
+    $ burns_face = "laugh"
     burn "Just for fun"
+    $ burns_face = "angry"
     weylon "oh, sir, in case you’re feeling stuck or if you’re unsure of what to do next, you know, in those rare instances where you kinda forgot what you should be doing, you can talk to me"
     weylon "and I might be able to provide some hints"
+    $ burns_face = "hmm"
     burn "Are you suggesting that I have inadequate capacity to remember my plans ?"
+    $ burns_face = "angry"
     weylon "No sir"
+    $ burns_face = "normal_t"
     burn "Are you implying that I'm going senile"
+    $ burns_face = "angry"
     weylon "Definitly not sir"
+    $ burns_face = "normal_t"
     burn "Good"
     # show burn rage with dissolve
     # show weylon suprise with dissolve
     burn "Because I'm not !"
+    $ burns_face = "normal"
     # show weylon angry with dissolve
     # show burn idle with dissolve
     weylon ". . . . ."
@@ -132,10 +150,14 @@ label story_1:
     weylon ". . . ."
     burn ". . . ."
     weylon ". . . . ."
+    $ burns_face = "normal_t"
     burn "Weylon, do you happen to remember what I plan to do this afternoon?"
+    $ burns_face = "normal"
     weylon "You were about to pester the maids for fun sir."
+    $ burns_face = "normal_t"
     burn "Right !"
     burn "Well, I'll be off now"
+    $ burns_face = "normal"
     weylon "take care sir"
     hide weylon with dissolve
     hide burn with dissolve

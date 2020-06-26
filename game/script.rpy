@@ -18,9 +18,9 @@ image weylon normal = ConditionSwitch(
     "not _last_say_who == 'weylon'", "char/weylon/normal.png",
     )
 
-image weylon angry = ConditionSwitch(
-    "_last_say_who == 'weylon'", "char/weylon/angry_t.png",
-    "not _last_say_who == 'weylon'", "char/weylon/angry.png",
+image weylon scared = ConditionSwitch(
+    "_last_say_who == 'weylon'", "char/weylon/scared_t.png",
+    "not _last_say_who == 'weylon'", "char/weylon/scared.png",
     )
 
 
