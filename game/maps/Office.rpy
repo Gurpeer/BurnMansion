@@ -19,6 +19,7 @@ label office:
     scene burn office bg
     show screen map(office_map)
     pause
+    jump office
 
 label office_desk:
     burn "This desk isn't for sale."

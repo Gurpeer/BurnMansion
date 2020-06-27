@@ -64,9 +64,9 @@ define ashley = Character("Ashley", color="#ff69b4", who_outlines=[ (3, "#ffffff
 define allison = Character("Allison", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="allison")
 define weylon = Character("Weylon", color="#006400", who_outlines=[ (3, "#ffffff") ], image="weylon")
 
-default burns_face = "angry"
-default burns_hands = "1"
-default burns_holding = "cash"
+# default burns_face = "angry"
+# default burns_hands = "1"
+# default burns_holding = "cash"
 image burn = Composite((471,741),
     (0,0), "char/burn/01/base 1.png",
     (0,0), "char/burn/01/face [burns_face].png",
@@ -81,7 +81,7 @@ label start:
     window hide
     show burn at left
     "sdsdsd"
-    $ burns_face = "normal"
+    # $ burns_face = "normal"
     "sdsd"
     jump story_1
 
