@@ -1,6 +1,6 @@
-﻿image burn normal = ConditionSwitch(
-    "_last_say_who == 'burn'", "char/burn/normal_t.png",
-    "not _last_say_who == 'burn'", "char/burn/normal.png",
+﻿image burn_base normal = ConditionSwitch(
+    "_last_say_who == 'burn'", "char/burn/01/face normal_t.png",
+    "not _last_say_who == 'burn'", "char/burn/01/face normal.png",
     )
 
 image side burn = "char/burn/icon.png"
@@ -18,9 +18,9 @@ image weylon normal = ConditionSwitch(
     "not _last_say_who == 'weylon'", "char/weylon/normal.png",
     )
 
-image weylon angry = ConditionSwitch(
-    "_last_say_who == 'weylon'", "char/weylon/angry_t.png",
-    "not _last_say_who == 'weylon'", "char/weylon/angry.png",
+image weylon scared = ConditionSwitch(
+    "_last_say_who == 'weylon'", "char/weylon/scared_t.png",
+    "not _last_say_who == 'weylon'", "char/weylon/scared.png",
     )
 
 
