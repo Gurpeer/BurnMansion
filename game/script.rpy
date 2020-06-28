@@ -81,7 +81,7 @@ label start:
     window hide
     show burn at left
     "sdsdsd"
-    $ burns_face = "normal"
+    # $ burns_face = "normal"
     "sdsd"
     jump story_1
 

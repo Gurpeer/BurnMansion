@@ -18,9 +18,8 @@
             self.p.remove(w)
 
 screen map(m):
-    modal True
+    # modal True
     tag place
-    
     for i in m.p:
         button:
             pos i.xy anchor 0.0,0.0 padding 0,0
@@ -30,5 +29,5 @@ screen map(m):
             else:
                 text i.name
             if i.act:
-                action Hide("map"), i.act
+                action i.act
     use map_stats(m)
