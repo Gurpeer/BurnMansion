@@ -27,6 +27,7 @@ label main_hall:
     scene hallway bg
     show screen map(main_hall_map)
     pause
+    jump main_hall
 
 label hallway_pickup:
     burn "Pick me up please, and thank you"

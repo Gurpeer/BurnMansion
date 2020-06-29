@@ -1,5 +1,6 @@
 ﻿
 label allison_event1:
+    hide screen map
     scene hallway bg_blur
     pause
     show burn normal at left with dissolve

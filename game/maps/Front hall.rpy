@@ -36,6 +36,7 @@ label front_hall:
     scene main hall bg
     show screen map(front_hall_map)
     pause
+    jump front_hall
 
 label fhall_mindy:
     burn "Trigger first event dialogue."

@@ -19,6 +19,7 @@ label bathroom:
     scene washroom bg
     show screen map(bathroom_map)
     pause
+    jump bathroom
 
 label bathroom_lock:
     burn "looks like a lock."

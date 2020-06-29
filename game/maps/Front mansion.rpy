@@ -23,6 +23,7 @@ label front_mansion:
     scene outside mansion bg
     show screen map(front_mansion_map)
     pause
+    jump front_mansion
 
 label fmansion_guard:
     burn "Sup dude. "
