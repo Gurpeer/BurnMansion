@@ -96,8 +96,8 @@ style default:
     align(.5,.5)
     padding(20,20)
     spacing 10
-    font "fonts/gadugib.TTF"
-    size 30
+    # font ""
+    # size 30
     
     color thm.t_idl
     hover_color thm.t_hov
@@ -106,10 +106,10 @@ style default:
 
 
     background Frame("0GUI/pat.png", 0, 0, tile=True)
-    foreground thm.f_idl
-    hover_foreground thm.f_hov
-    selected_foreground thm.f_slc_idl
-    selected_hover_foreground thm.f_slc_hov
+    # foreground thm.f_idl
+    # hover_foreground thm.f_hov
+    # selected_foreground thm.f_slc_idl
+    # selected_hover_foreground thm.f_slc_hov
 
     # hover_sound "0gui/sfx/hover.mp3"
     # activate_sound "0gui/sfx/select.mp3"

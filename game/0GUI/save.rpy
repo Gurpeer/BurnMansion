@@ -24,10 +24,12 @@ define config.thumbnail_height = 216
 
 screen save():
     tag menu
+    add "0GUI/save/frame_save.jpg"
     use file_slots(_("Save"))
 
 screen load():
     tag menu
+    add "0GUI/save/frame_load.jpg"
     use file_slots(_("Load"))
     
 screen file_slots(title):
@@ -35,11 +37,13 @@ screen file_slots(title):
     style_prefix "sav"
     use game_menu(title):
         vbox:
+            yoffset 80
             grid 3 2:
                 for i in range(6):
                     $ slot = i + 1
                     button:
                         at btn
+                        background Frame("0GUI/save/save_slot.png", 20,20)
                         action FileAction(slot)
                         has vbox
                         add FileScreenshot(slot)
@@ -48,12 +52,13 @@ screen file_slots(title):
                             text FileSaveName(slot)
                         key "save_delete" action FileDelete(slot)
 
-            hbox:
-                textbutton _("<") action FilePagePrevious() at btn
-                button:
-                    at btn
-                    key_events True
-                    action page_name_value.Toggle()
-                    input:
-                        value page_name_value
-                textbutton _(">") action FilePageNext() at btn
+        hbox:
+            yoffset -300
+            textbutton _("<") action FilePagePrevious() at btn
+            button:
+                at btn
+                key_events True
+                action page_name_value.Toggle()
+                input:
+                    value page_name_value
+            textbutton _(">") action FilePageNext() at btn
