@@ -52,6 +52,10 @@ define gui.text_color = '#ffffff'
 define gui.interface_text_color = '#ffffff'
 
 
+## Music
+
+define config.main_menu_music = "evil_theme.mp3"
+
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
