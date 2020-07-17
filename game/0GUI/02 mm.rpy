@@ -48,23 +48,43 @@ init -80 python:
 init offset = -1
 
 ## Navigation screen ###########################################################
-
+init python:
+    _game_menu_screen = "navigation"
 screen navigation(m = mmm):
     style_prefix "nav"
-    
-    frame:
-        align(.5,1.0)
-        hbox:
-            for i in m.list:
-                if (main_menu and i.mm) or (not main_menu and i.nav) and i.rep:
-                    pass
-                else:
-                    button:
-                        at btn
-                        text i.name
-                        action i.act
+    tag menu
+    add "0GUI/nav/bg.png"
+    add "0GUI/nav/nav.png" xoffset 35
+    vbox:
+        yoffset 20
+        button:
+            at btn
+            add "0GUI/nav/load.png"
+            action ShowMenu("load")
+        button:
+            at btn
+            add "0GUI/nav/save.png"
+            action ShowMenu("save")
+        button:
+            at btn
+            add "0GUI/nav/settings.png"
+            action ShowMenu("preferences")
+        button:
+            at btn
+            add "0GUI/nav/mm.png"
+            action MainMenu()
+        button:
+            at btn
+            add "0GUI/nav/quit.png"
+            action Quit(confirm=not main_menu)
+    button:
+        at btn
+        offset 280,-410
+        add "0GUI/nav/return.png"
+        action Return()
 
-
+style nav_button:
+    background None
 ## Main Menu screen ############################################################
 image mm_fire:
     "0GUI/mm/fire1.png"
@@ -129,7 +149,6 @@ screen game_menu(title):
     # add bgs[1]
     transclude
 
-    use navigation
     button:
         xysize 200,200 foreground None align 0.94,0.05
         hover_background "0GUI/mm/exit_h.png"
