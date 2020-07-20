@@ -2,13 +2,13 @@
     "maps/burn room/fish_tank.png"
     xpos 1330 yalign .4
     xzoom 1.0
-    linear 2 xpos renpy.random.randint(1300,1500) yalign .4
+    linear 2 xpos renpy.random.randint(1300,1480) yalign .4
     xzoom -1.0
-    linear 2 xpos renpy.random.randint(1295,1380) yalign .4
+    linear 2 xpos renpy.random.randint(1295,1356) yalign .4
     xzoom 1.0
-    linear 2 xpos renpy.random.randint(1200,1480) yalign .38
+    linear 2 xpos renpy.random.randint(1340,1390) yalign .38
     xzoom -1.0
-    linear 2 xpos renpy.random.randint(1205,1380) yalign .4
+    linear 2 xpos renpy.random.randint(1300,1323) yalign .4
     # pause 2
     # xpos 1330 
     # linear 4 xpos renpy.random.randint(1200,1270) yalign .4
