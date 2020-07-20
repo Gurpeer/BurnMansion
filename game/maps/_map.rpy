@@ -13,7 +13,7 @@
             self.p = p # places
         def discover(self, x):
             self.p.append(x)
-            msg.msg("Discovered {}".format(x.name))
+          #  msg.msg("Discovered {}".format(x.name))
         def rem(self, w):
             self.p.remove(w)
 

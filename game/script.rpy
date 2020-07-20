@@ -79,6 +79,7 @@ image burn = Composite((471,741),
 
 label start:
     window hide
+    stop music
     show burn at left
     "sdsdsd"
     # $ burns_face = "normal"
