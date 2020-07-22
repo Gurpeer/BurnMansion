@@ -4,6 +4,9 @@
 
 screen say(who, what):
     style_prefix "say"
+    button:
+        background None
+        action Return()
     vbox:
         yalign 0.0 yoffset 60
         hbox:

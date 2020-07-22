@@ -21,13 +21,17 @@ screen map(m):
     # modal True
     tag place
     for i in m.p:
-        button:
-            pos i.xy anchor 0.0,0.0 padding 0,0
-            if i.icon:
-                background None foreground None hover_background i.hover_icon
-                add i.icon
-            else:
-                text i.name
-            if i.act:
-                action i.act
+        if isinstance(i, basestring):
+            add i
+        else:
+            button:
+                pos i.xy anchor 0.0,0.0 padding 0,0
+                focus_mask True
+                if i.icon:
+                    background None foreground None hover_foreground i.hover_icon
+                    add i.icon
+                else:
+                    text i.name
+                if i.act:
+                    action i.act
     use map_stats(m)

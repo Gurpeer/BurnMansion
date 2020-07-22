@@ -6,14 +6,24 @@ screen confirm(message, yes_action, no_action):
     modal True
     zorder 200
     style_prefix "yn"
-    add bgs[2]
+    add "0GUI/yn/bg.jpg"
     frame:
-        xsize 1000
+        align .9,.8
+        xsize 1000 background None
         vbox:
             label _(message) background None at btn
             hbox:
-                textbutton _("Yes") action yes_action at btn
-                textbutton _("No") action no_action at btn
+                spacing 100
+                button:
+                    # text _("Yes")
+                    background None
+                    add "0GUI/yn/yes.png"
+                    action yes_action at btn
+                button:
+                    # text _("No")
+                    background None
+                    add "0GUI/yn/no.png"
+                    action no_action at btn
 
     key "game_menu" action no_action
 

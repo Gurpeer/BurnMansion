@@ -36,6 +36,9 @@ default office_fire_loc = place("fire", (0, 0), None, "office_fire")
 default office_map = maps(
     "Office",
     [
+        "office_sky",
+        "bird_move",
+        "office_sky_wood",
         office_desk_loc,
         office_weylon_loc,
         office_firecamp_loc,
@@ -53,10 +56,6 @@ default office_map = maps(
 
 label office:
     scene office bg
-    show office_sky
-    show bird_move
-    show office_sky_wood
-   # show office_fire
     show screen map(office_map)
     pause
     jump office
@@ -99,7 +98,7 @@ label office_fossil:
 label office_football:
     burn "Ahh HA, a signed football"
     burn "This will definitly sell me some good price !"
-    burn "Take this item plz, KIA."
+    $ office_map.rem(office_football_loc)
     jump office
 
 label office_book:
