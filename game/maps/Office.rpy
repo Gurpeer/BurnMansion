@@ -69,10 +69,11 @@ label office_weylon:
     jump office
 
 label office_firecamp:
-    burn "You can burn a body in it."
-    burn "Wait a minute. . ."
-    burn "There is something in here... why don't I remember what this is?... seem to be a entrance to somewhere in here"
-    jump office
+    # burn "You can burn a body in it."
+    # burn "Wait a minute. . ."
+    # burn "There is something in here... why don't I remember what this is?... seem to be a entrance to somewhere in here"
+    jump chamber_entrance
+   # jump office
 
 label office_picture:
     burn "Ah, yessss, my great grand dad! he's too expensive to sell yet"
