@@ -53,7 +53,7 @@ init python:
 screen navigation(m = mmm):
     style_prefix "nav"
     tag menu
-    add "0GUI/nav/bg.png"
+    add "0GUI/nav/bg.jpg"
     add "0GUI/nav/nav.png" xoffset 35
     vbox:
         yoffset 20
