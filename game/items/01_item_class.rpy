@@ -15,6 +15,13 @@
 default signed_ball = item(
     "signed Ball",
     200,
-    "items/icons/ball.png",
+    "items/icons/football_icon.png",
     "Signed John, must be worth millions!",
+)
+
+default knight_sword = item(
+    "A Knight Sword",
+    80,
+    "items/icons/knight_sword_icon.png",
+    "A fine craftman by a amatuer Blacksmith",
 )
