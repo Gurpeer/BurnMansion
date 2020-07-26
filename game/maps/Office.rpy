@@ -65,7 +65,61 @@ label office_desk:
     jump office
 
 label office_weylon:
-    burn "How much would you pay for a Weylon?"
+    hide screen map
+    scene office blur
+    show weylon normal at right
+    $ burns_face = "normal"
+    show burn_base at left
+    menu:
+        "Ashley" if ashley_story == 1:
+            burn "Weylon, I need some.... couple of help here"
+            weylon "Yes, what do you need sir ?"
+            burn "Well.. Ashley has some kind of issue with her pride of women rights and I don't really know what she needs"
+            weylon "Women right ?"
+            burn "... she asked to be a CEO and got rejected. HAHAHAHA"
+            weylon "Oh, I see the problem"
+            weylon "Sir, how about you offer her a position here at the desk?"
+            burn "WHAT? That is out of questions ! "
+            weylon "Well, I think it's a brilliant plan sir, you could trick her into thinking she is a official manager but isn't. Have her hunt for woman from the street as a job while pretending to act as a Manager"
+            burn "hmpt !...... WELL...... I guess you are right.. ha"
+            burn "But how will I... you know. Do unusual things with her.."
+            weylon "You could have her meet a condition before she can get her offer"
+            burn ".. hmm I like the sound of that, keep going"
+            weylon "Have her do your activites that you desire, you know the little pleasure of immeasurable proportions"
+            burn "HA, you know what I want, WAIT. Why do you know this.. ?"
+            weylon "Hm.. welll. . . . *ahem* SIR, as I was saying, make her meet your coniditon. However if she show some sort of resistent and tries to do something like calling the cops, I have your back on that."
+            weylon "We can lockdown the mansion and she wouldn't be able to call the police and have her gass out, and have her in your chamber if you have unlocked it already"
+            burn "I like this, be sure you make no mistake Weylon"
+            weylon "Yes, sir."
+            burn "Now, I shall do my deeds"
+            $ ashley_story += 1
+            jump  office_weylon
+
+        "Chamber door" if check_door == True:
+            burn "WEYLON !"
+            weylon "Yes ? do you need something sir ?"
+            burn "Why don't I remember the thing in the chamber entrance ?"
+            weylon "What thing. .? sir"
+            burn "THE THING WEYLON"
+            weylon "I'm sorry, but. . I do .n"
+            burn "Weylon, don't make me go furious. I'm talking about the thing on the door that I can't seem to remember"
+            weylon "*...the thing on the door ?.... OH right, now I see*"
+            weylon "Sir, you mean your genius idea on the door that you seem to forgot about ?"
+            burn "Yes"
+            weylon "*...* You wanted to make three different shape which were diamonds. You need diamonds pieces to open the door"
+            burn "Oh yes, now I remember"
+            burn "Remind me what diamond I'm looking for.. again? . ."
+            weylon "The red, green and blue diamond"
+            burn "AHH yes , that's right. "
+            jump office_weylon
+            
+        "Nothing, weylon":
+            jump office_weylon 
+        "Leave":
+            jump office
+
+
+#    burn "How much would you pay for a Weylon?"
     jump office
 
 label office_firecamp:

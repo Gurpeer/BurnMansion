@@ -2,8 +2,8 @@
     xalign 0.8
     ypos 0.3
 transform girl_pos1:
-    xalign 0.55
-    ypos 0.3
+    xalign 0.86
+    ypos 0.65
 
 
 style scene_text is text:
@@ -54,27 +54,35 @@ label story_1:
     show burn_base at left
     $ burns_face = "normal"
     $ burns_hands = "3"
-    show mindy normal at right with dissolve
-    show allison normal at midright with dissolve
-    show ashley normal at center with dissolve
+    show mindy_base at right with dissolve
+    show allison_base at girl_pos1 with dissolve
+    show ashley_base at center with dissolve
     $ burns_face = "normal_t"
     burn "From today on, you will work in this mansion until the day your contract expires."
     burn "As per the contract, you will work 24/7 during workdays, weekends, and holidays"
     burn "You will also work within questionable safety precautions with no insurance and receive salary below the minimum wages. Any questions?”"
     $ burns_face = "normal"
+    $ mindy_face = "normalt"
     mindy "What about Christmas ?"
     $ burns_face = "normal_t"
+    $ mindy_face = "normal"
     burn "You will help with getting the Christmas tree and then decorating it"
     $ burns_face = "normal"
-    show ashley angry at center with dissolve
+   # show ashley angry at center with dissolve
+    $ ashley_face = "angry"
     pause
+    $ ashley_face = "angryt"
     ashley "this is bullshit! How can we possibly just accept all of this!?"
     $ burns_face = "normal_t"
+    $ ashley_face = "angry"
     burn "oh, then I guess you would rather go back to the fast food restaurant where you came from?"   
     $ burns_face = "normal"
-    show ashley normal at center with dissolve
+    $ ashley_face = "normal"
+   # show ashley normal at center with dissolve
     pause
+    $ ashley_face = "normalt"
     ashley "……on second thought, it’s basically the same thing"
+    $ ashley_face = "normal"
     $ burns_face = "normal_t"
     burn "Well then"
     burn "Since you are now the employees of this house, you shall call me ‘the honorable mr burns"
@@ -87,11 +95,16 @@ label story_1:
     # show burn rage with dissolve
     burn "Now get to it, chop-chop!”"
     $ burns_face = "angry"
+    $ allison_face = "normalt"
     allison "oh, I forgot to ask"
     $ burns_face = "normal_t"
+    $ allison_face = "normal"
     burn "yes ?"
+    $ allison_face = "normalt"
     allison "When will our contract end ?"
+    $ allison_face = "normal"
     burn "they don't."
+    $ burns_face = "normal"
     hide burn with dissolve
     hide mindy with dissolve
     hide ashley with dissolve
@@ -103,6 +116,7 @@ label story_1:
     scene burn_office blur with dissolve
     show burn_base at left
     show weylon normal at right with dissolve
+    $ burns_face = "normal_t"
     burn "Now then Weylon"
     burn "Tell me again about my brilliant plan to recliam what's rightfully mine"
     $ burns_face = "laugh"

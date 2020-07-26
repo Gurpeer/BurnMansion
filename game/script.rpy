@@ -49,10 +49,16 @@ image allison surprise = "char/allison/surprise.png"
 
 image side allison = "char/allison/icon.png"
 
-
+#chamber stuff
+default chamber_access = False
+default check_door = False
+default chamber_diamond_collected = False
 
 ## Allison Event story
 default allison_story = 0
+
+## Ashley Event Story
+default ashley_story = 0
 
 
 
@@ -67,12 +73,12 @@ define weylon = Character("Weylon", color="#006400", who_outlines=[ (3, "#ffffff
 # default burns_face = "angry"
 # default burns_hands = "1"
 # default burns_holding = "cash"
-image burn = Composite((471,741),
-    (0,0), "char/burn/01/base 1.png",
-    (0,0), "char/burn/01/face [burns_face].png",
-    (0,0), "char/burn/01/hands [burns_hands].png",
-    (0,0), "char/burn/01/holding [burns_holding].png",
-)
+# image burn = Composite((471,741),
+#     (0,0), "char/burn/01/base 1.png",
+#     (0,0), "char/burn/01/face [burns_face].png",
+#     (0,0), "char/burn/01/hands [burns_hands].png",
+#     (0,0), "char/burn/01/holding [burns_holding].png",
+# )
 
 
 # The game starts here.
@@ -80,12 +86,45 @@ image burn = Composite((471,741),
 label start:
     window hide
     stop music
+   #  show burn_base at left
+   #  $ burns_hands = "3"
+   #  "sdsdsd"
+   #  # $ burns_face = "normal"
+   #  "sdsd"
+
+   #  show ashley_base at center
+   #  pause
+   #  $ ashley_face = "normalt"
+   #  ashley "Hi"
+   #  ashley "...nope"
+   #  $ ashley_face = "angryt"
+   #  ashley "BYE test."
+   #  $ ashley_face = "angry"
+
+
+   #  show mindy_base at girl_pos1
+   #  pause
+   #  $ mindy_face = "normalt"
+   #  mindy "Hi"
+   #  mindy "Just testing my rigg : )"
+   #  $ mindy_face = "normal"
+
+   #  show allison_base at midright
+   #  pause
+   #  $ allison_face = "normalt"
+   #  allison "Hi !"
+   #  allison "Also, testing my rig"
+   # # $ allison_bra = "none"
+   #  $ allison_clothe = "none"
+   #  $ allison_face = "sleepy"
+   #  allison "OK, bye"
+   #  pause
+   #  $ allison_wear = "eyepatch"
+   #  allison "Also.. my eyepatch too"
+
     scene black with dissolve
     pause .5
-    # show burn at left
-    # "sdsdsd"
-    # # $ burns_face = "normal"
-    # "sdsd"
+
     jump story_1 
 
     return

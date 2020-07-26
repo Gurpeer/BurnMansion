@@ -52,7 +52,23 @@ label chamber_entrance:
 
 
 label chamber_entrance_door:
-    jump chamber
+    if check_door == False:
+        burn "Oh, I remember this. This is one of my many genius creation."
+        burn "I wanted something unique and unusual kind of secret chamber with a locked door"
+        burn "The password or simple lock is super boring and lame, so I came up with this genius idea"
+        burn "That was to, implement a triangle shape and you require to . . . . ."
+        burn "Wait"
+        burn "Why don't I remember this???!!?"
+        burn "I have to ask Weylon about this, it has been ages since I last came here. "
+        $ check_door = True
+        jump chamber_entrance
+
+    if chamber_diamond_collected == False:
+        burn "Hm... missing something here"
+        jump chamber_entrance
+
+    elif chamber_diamond_collected == True:
+        jump chamber
 
 # label office_football:
 #     burn "Ahh HA, a signed football"

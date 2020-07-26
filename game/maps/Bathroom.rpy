@@ -11,7 +11,7 @@
 default bathroom_door_loc = place("Door", (859, 519), Jump('main_hall'), "maps/bathroom/washroom door.png")
 default bathroom_lock_loc = place("Lock", (704, 210), Jump('bathroom_lock'), "maps/bathroom/washroom lock.png")
 # default bathroom_clay_loc = place("Clay", (315, 394), Jump('bathroom_clay'), "maps/bathroom/washroom clay_guy.png")
-default bathroom_ashley_loc = place("Ashley", (766, 346), Jump('bathroom_ashley'), "maps/bathroom/washroom ashley.png")
+default bathroom_ashley_loc = place("Ashley", (954, 710), Jump('bathroom_ashley'), "maps/bathroom/washroom ashley.png")
 default bathroom_s_candle_loc = place("s_candle", (1746, 444), Jump('bathroom_s_candle'), "maps/bathroom/s_candle.png")
 default bathroom_towel_loc = place("Towel", (1055, 476), Jump('bathroom_towel'), "maps/bathroom/towel.png")
 default bathroom_bathtub_loc = place("Bathtub", (1281, 839), Jump('bathroom_bathtub'), "maps/bathroom/washroom_tub.png")
@@ -26,7 +26,7 @@ default bathroom_map = maps(
         bathroom_towel_loc,
         bathroom_bathtub_loc,
         # bathroom_clay_loc,
-        # bathroom_ashley_loc,
+        bathroom_ashley_loc,
 
     ]
     )
@@ -63,9 +63,24 @@ label bathroom_bathtub:
     burn "But, not in the mood for this"
     jump bathroom
 
-# label bathroom_ashley:
-#     burn "Triggers first event scene dialogue."
-#     jump bathroom
+label bathroom_ashley:
+    if ashley_story == 0:
+        jump ashley_event1
+        
+    if ashley_story == 1:
+        burn "Should talk to Weylon about her, what kind of plan I should do with her. . hehe"
+
+    if chamber_access == False and ashley_story == 2:
+        burn "I have not unlocked the Chamber yet to execute my brilliant plan"
+        jump bathroom
+
+    elif chamber_access == True and ashley_story == 2:
+        burn "no jumping yet, inventory is needed to be finished.. ;-;............"
+        jump bathroom
+
+    else:
+    #    burn "Triggers first event scene dialogue."
+        jump bathroom
 
 
 

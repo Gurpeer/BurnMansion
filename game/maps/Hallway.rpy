@@ -27,7 +27,6 @@ default hallway_office_loc = place("Hall Office", (1057, 117), Jump('office'), "
 default hallway_allison_loc = place("Allison", (379, 299), Jump('hallway_allison'), "maps/hallway/allison.png")
 default hallway_sword_loc = place("Sword", (816, 420), Jump('hallway_sword'), "maps/hallway/sword.png")
 default hallway_armour_loc = place("Armour", (0, 339), Jump('hallway_doomarmor'), "maps/hallway/doom armor.png")
-#default hallway_ball_loc = place("Ball", (189, 461), Jump('hallway_pickup'), "maps/hallway/ball.png")
 default hallway_shield_loc = place("Shield", (1458, 689), Jump('hallway_shield'), "maps/hallway/shield.png")
 default hallway_lighting_loc = place("lighting", (0, 0), None, "hallway_lighting")
 
