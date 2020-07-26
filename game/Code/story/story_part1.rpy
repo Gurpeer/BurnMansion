@@ -12,23 +12,44 @@ style scene_text is text:
     outlines [(4, "#000000", 0, 0)] # this value is not final, just trying to see some results
 
 label story_1:
-    scene yesman_1
+    scene yesman_new1 with dissolve
     pause
-    scene yesman_2 with dissolve
+    scene yesman_burn_lookup with dissolve
+    pause
+    scene yesman_burn_talk with dissolve
     burn "isn’t that who I’m supposed to be?"
-    scene yesman_3 with dissolve
+    scene yes_man_all_talk with dissolve
     yes_men "yes sir, absolutely, no mistake about it."
-    scene yesman_2 with dissolve
+    scene yesman_burn_talk2 with dissolve
     burn "then tell me this. Why on earth has my business, and all my assets, been handed to people I have never even heard of?! That’s not all! I am now in debt! In debt! Of all things! So tell me, how could this happen? Did I make a wrong move?"
-    scene yesman_4 with dissolve  
+    scene yes_man_oneguy with dissolve  
     yes_men "no sir, definitely not. You made all the right moves sir. Yes sir."  
-    scene yesman_5 with dissolve
+    scene yesman_burn_lookup with dissolve
     burn ". . ."
-    scene yesman_2 with dissolve
+    scene yesman_burn_talk3 with dissolve
     burn "you bunch of imbeciles. Fine! No matter"
     burn "I had been in this hellhole before. If I have to begin from the start, I will do so"
     burn "That’s right, this will be as easy as taking candies from drunk old man sitting in the front porch of his retirement house"
     burn "After all, I still have my mansion. Yes, I know just what to do"
+    scene yesman_burn_talk2 with dissolve
+    burn "But first... there is this sweet red button I was waiting to touch"
+    scene yesman_redbutton with dissolve
+    burn "*About time... BEEN SO LONG*"
+    scene black with dissolve
+    pause
+    scene yes_men_middle_gone with dissolve
+    burn "*HAHAHAHAHAAAAAAAAAAAA*"
+    pause
+    scene yes_men_middle_gone1 with dissolve
+    pause
+    scene yesman_lastgetout with dissolve
+    burn "Now then, GET OUT OF THE OFFICE NOW"
+    scene yesman_alone with dissolve
+    burn "........"
+    scene yesman_alone_talk with dissolve
+    burn "That should let them know who not to MESS with."
+    scene yesman_alone with dissolve
+    pause
     scene burn_office blur with dissolve
     show burn_base at left
     $ burns_face = "normal"

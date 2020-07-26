@@ -80,10 +80,12 @@ image burn = Composite((471,741),
 label start:
     window hide
     stop music
-    show burn at left
-    "sdsdsd"
-    # $ burns_face = "normal"
-    "sdsd"
-    jump story_1
+    scene black with dissolve
+    pause .5
+    # show burn at left
+    # "sdsdsd"
+    # # $ burns_face = "normal"
+    # "sdsd"
+    jump story_1 
 
     return
