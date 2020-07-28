@@ -112,6 +112,23 @@ label office_weylon:
             weylon "The red, green and blue diamond"
             burn "AHH yes , that's right. "
             jump office_weylon
+
+        "Burn Sinister Head test":
+            $ burns_accessory = "sinister"
+            burn "..."
+            weylon "*laughs*"
+            $ burns_face = "normal_t"
+            burn "wut"
+            $ burns_face = "normal"
+            weylon "U got a sinister on your head . "
+            $ burns_face = "normal_t"
+            burn "What....the"
+            $ burns_face = "angry"
+            burn "*wipes it off*"
+            $ burns_face = "normal"
+            $ burns_accessory = "none"
+            $ burns_face = "normal_t"
+            burn "ahem"
             
         "Nothing, weylon":
             jump office_weylon 

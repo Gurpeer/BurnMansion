@@ -64,7 +64,10 @@ label chamber_entrance_door:
         jump chamber_entrance
 
     if chamber_diamond_collected == False:
+        # $ chamber_entrance_map.rem("chamber insert")
+        # $ chamber_entrance_map.discover("chamber diamond")
         burn "Hm... missing something here"
+        # $ chamber_diamond_collected = True
         jump chamber_entrance
 
     elif chamber_diamond_collected == True:
