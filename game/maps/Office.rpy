@@ -49,8 +49,6 @@ default office_map = maps(
         office_fossil_loc,
         office_book_loc,
         office_fire_loc,
-
-
     ]
     )
 
@@ -154,6 +152,7 @@ label office_football:
     burn "Ahh HA, a signed football"
     burn "This will definitly sell me some good price !"
     $ office_map.rem(office_football_loc)
+    $ player.got(signed_ball, 1)
     jump office
 
 label office_book:

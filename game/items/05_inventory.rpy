@@ -27,3 +27,27 @@
             if len(self.bags):
                 self.bags[0].rem(x, q)
                 msg.msg("You have dropped {} of {}".format(q, x.name))
+
+default player = inventory()
+screen inventory(p = player):
+    modal True
+    style_prefix "inv"
+    vbox:
+        hbox:
+            if len(p.bags[0].items):
+                for i in p.bags[0].items:
+                    button:
+                        tooltip i
+                        fixed:
+                            fit_first True
+                            add i.item.icon
+                            text str(i.quantity) align 1.0,1.0
+                        action i.item.usage
+            else:
+                frame:
+                    padding 40,40
+                    vbox:
+                        text "You have no items"
+        button:
+            text "Close"
+            action ToggleScreen("inventory")

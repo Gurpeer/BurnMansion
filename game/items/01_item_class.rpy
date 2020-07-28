@@ -2,7 +2,7 @@
     class item:
         def __init__(self,
                 name, price, icon,
-                info = "", type = None, usage = None
+                info = "", type = None, usage = NullAction()
             ):
             self.name = name
             self.price = price
@@ -23,7 +23,7 @@ default knight_sword = item(
     "A Knight Sword",
     80,
     "items/icons/knight_sword_icon.png",
-    "A fine craftman by a amatuer Blacksmith",
+    "A fine craftsman by a amateur Blacksmith",
 )
 
 default office_key = item(
@@ -65,7 +65,7 @@ default spa_camera = item(
     "A spa camera",
     0,
     "items/icons/camera_icon.png",
-    "A sneaky sqaured spa camera",
+    "A sneaky squared spa camera",
 )
 
 default blue_gem = item(

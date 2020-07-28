@@ -96,8 +96,8 @@ style default:
     align(.5,.5)
     padding(20,20)
     spacing 10
-    # font ""
-    # size 30
+    font "0GUI/fonts/Homer_Simpson.ttf"
+    size 30
     
     color thm.t_idl
     hover_color thm.t_hov
