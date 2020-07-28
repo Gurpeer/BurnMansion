@@ -42,7 +42,7 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action xsize 1000 at btn
+            textbutton i.caption action i.action xsize 500 at btn
 
 define config.narrator_menu = True
 
