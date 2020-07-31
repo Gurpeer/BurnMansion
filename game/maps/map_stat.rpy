@@ -6,18 +6,21 @@
             self.cash = 0
         def got_cash(self, a):
             self.cash += a
+        def lose_cash(self, a):
+            self.cash -= a
+
 default mr_burns = player_units("Burns")
 screen map_stats(m, p = mr_burns):
     modal True
     tag place
     fixed:
-        align 1.0,0.0 offset -50,-1 fit_first True
+        align 1.0,0.0 offset -0,-1 fit_first True
         add "stats/ui_base.png"
         button:
-            background None foreground None offset -120, 4
+            background None foreground None offset -135, 4
             add "stats/ui_quest.png"
         hbox:
-            offset 40,70 spacing -10
+            offset 40,110 spacing -10
             button:
                 background None
                 add "stats/ui_settings.png"
@@ -30,8 +33,8 @@ screen map_stats(m, p = mr_burns):
                 text "Inv"
                 action ToggleScreen("inventory")
         hbox:
-            offset 180, -8 spacing 0 xalign 0.0
+            offset 200, -14 spacing 0 xalign 0.0
             add "stats/money.png"
-            text str(p.cash) offset 10, -10
-        text m.name xalign 0.0 offset 240, 30
+            text "{color=#fff}" + str(p.cash) + "{/color}" offset 10, -0
+        text "{color=#fff}{size=33}" + m.name + "{/colffa391or}{/size}" xalign 0.0 offset 260, 30
 

@@ -49,10 +49,17 @@ image allison surprise = "char/allison/surprise.png"
 
 image side allison = "char/allison/icon.png"
 
+
 #chamber stuff
 default chamber_access = False
 default check_door = False
+default office_firecamp_key = False
+default office_firecamp_open = False
 default chamber_diamond_collected = False
+
+## Seller NPC
+default seller_call = False
+default seller_npc = False
 
 ## Allison Event story
 default allison_story = 0
@@ -60,14 +67,20 @@ default allison_story = 0
 ## Ashley Event Story
 default ashley_story = 0
 
+## Guards
+default guard_dialogue = 0
 
 
 define burn = Character("Burn", color="#fe4911", who_outlines=[ (3, "#ffffff") ], image="burn", box_box_reverse = True, namebox_xalign=0.0)
 define burn1 = Character("Burn", color="#fe4911", who_outlines=[ (3, "#ffffff") ], image="burn")
 define yes_men = Character("Yes men")
+define jack = Character("Jack", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="jack")
+define jill = Character("Jill", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="jill")
 define mindy = Character("Mindy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="mindy")
+define scratchy = Character("Scratchy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="scrathy")
 define ashley = Character("Ashley", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="ashley")
 define allison = Character("Allison", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="allison")
+define seller = Character("Seller", color="#ffff", who_outlines=[ (3, "#ffffff") ], image="seller")
 define weylon = Character("Weylon", color="#006400", who_outlines=[ (3, "#ffffff") ], image="weylon")
 
 # default burns_face = "angry"

@@ -1,14 +1,14 @@
 ﻿
 label allison_event1:
-    hide screen map
-    scene hallway bg_blur
-    pause
-    show burn_base at left with dissolve
     $ burns_face = "normal"
     $ allison_face = "sleepy"
+    # hide screen map
+    # scene hallway bg_blur
+  #  pause
+    show burn_base onlayer over_screens at left with dissolve
+
     $ burns_hands = "3"
-    show allison_base at right with dissolve
-    pause
+    show allison_base onlayer over_screens at right with dissolve
     $ burns_face = "hmm"
     burn "Good day Allison Taylor"
     $ burns_face = "normal"
@@ -32,7 +32,7 @@ label allison_event1:
     $ allison_face = "normalt"
     allison "sir, you grabbed me on the road and pulled me into your van"
     $ allison_face = "angry"
-    pause
+    ""
     $ allison_face = "angryt"
    # show allison angry at right
     allison "and then you brought me here and had me sign the contract without any explanations"
@@ -44,7 +44,7 @@ label allison_event1:
     $ allison_face = "suprise"
    # show allison surprise at right
     burn "Hahahaaa"
-    pause
+    ""
     $ allison_face = "normalt"
     $ burns_face = "normal"
     #show allison normal at right
@@ -63,8 +63,10 @@ label allison_event1:
     $ allison_face = "normalt"
     allison "Of course, no problem"
     $ allison_face = "normal"
-    hide allison_base with dissolve
-    show burn_base at center with dissolve
+    hide allison_base onlayer over_screens at right with dissolve
+    $ main_hall_map.discover(hallway_allison_loc)
+    hide burn_base onlayer over_screens at left
+    show burn_base onlayer over_screens at center with dissolve
     burn ". . . ."
     $ burns_hands = "phone"
     "Calls Weylon"
@@ -77,6 +79,8 @@ label allison_event1:
     burn "*ahem*"
     burn "Can't wait to peste......"
     burn "*BE CAREFUL, she is right there..... jeez*"
+    hide burn_base onlayer over_screens at center with dissolve
+
    # $ bathroom_map.discover(bathroom_s_candle_loc)
     $ allison_story += 1
     jump main_hall

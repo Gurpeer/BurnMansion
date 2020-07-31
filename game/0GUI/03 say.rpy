@@ -14,7 +14,7 @@ screen say(who, what):
             window:
                 id "window"
                 xsize 1000 yminimum 128
-                label what id "what" background None text_size 30 foreground None yoffset -5
+                label what id "what" background None text_size 29 text_font "0GUI/fonts/Sriracha.ttf" foreground None yoffset -5
 
             if not renpy.variant("small"):
                 frame:
@@ -42,7 +42,7 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action xsize 500 at btn
+            textbutton i.caption action i.action xsize 500 text_size 28 text_font "0GUI/fonts/Sriracha.ttf" at btn
 
 define config.narrator_menu = True
 

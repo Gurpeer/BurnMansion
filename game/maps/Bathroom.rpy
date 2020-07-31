@@ -14,14 +14,17 @@ default bathroom_lock_loc = place("Lock", (704, 210), Jump('bathroom_lock'), "ma
 default bathroom_ashley_loc = place("Ashley", (954, 710), Jump('bathroom_ashley'), "maps/bathroom/washroom ashley.png")
 default bathroom_s_candle_loc = place("s_candle", (1746, 444), Jump('bathroom_s_candle'), "maps/bathroom/s_candle.png")
 default bathroom_towel_loc = place("Towel", (1055, 476), Jump('bathroom_towel'), "maps/bathroom/towel.png")
+default bathroom_greengem_loc = place("Green_gem", (165, 250), Jump('bathroom_greengem'), "maps/bathroom/green_gem.png")
 default bathroom_bathtub_loc = place("Bathtub", (1281, 839), Jump('bathroom_bathtub'), "maps/bathroom/washroom_tub.png")
 
 
 default bathroom_map = maps(
     "Bathroom",
     [
+        "bathroom_air",
         bathroom_door_loc,
         bathroom_lock_loc,
+        bathroom_greengem_loc,
         bathroom_s_candle_loc,
         bathroom_towel_loc,
         bathroom_bathtub_loc,
@@ -33,7 +36,7 @@ default bathroom_map = maps(
 
 label bathroom:
     scene washroom bg
-    show bathroom_air
+   # show bathroom_air
     show screen map(bathroom_map)
     pause
     jump bathroom
@@ -58,6 +61,15 @@ label bathroom_towel:
     burn "Nope"
     jump bathroom
 
+label bathroom_greengem:
+    burn "A green looking gem"
+    show greengem_item_frame onlayer over_screens
+    "Obtained a green diamond"
+    hide greengem_item_frame onlayer over_screens
+    $ bathroom_map.rem(bathroom_greengem_loc)
+    $ player.got(green_gem, 1)
+    jump bathroom
+
 label bathroom_bathtub:
     burn "Ah, yes. The relaxation that water has"
     burn "But, not in the mood for this"
@@ -65,18 +77,16 @@ label bathroom_bathtub:
 
 label bathroom_ashley:
     if ashley_story == 0:
+        $ bathroom_map.rem(bathroom_ashley_loc)
         jump ashley_event1
         
     if ashley_story == 1:
-        burn "Should talk to Weylon about her, what kind of plan I should do with her. . hehe"
+        burn "Should talk to Weylon about her, don't exactly know what to do with her"
 
     if chamber_access == False and ashley_story == 2:
-        burn "I have not unlocked the Chamber yet to execute my brilliant plan"
+        burn "I have not unlocked the Chamber yet to execute my brilliant plan and it's better I talk to her next day"
         jump bathroom
 
-    elif chamber_access == True and ashley_story == 2:
-        burn "no jumping yet, inventory is needed to be finished.. ;-;............"
-        jump bathroom
 
     else:
     #    burn "Triggers first event scene dialogue."

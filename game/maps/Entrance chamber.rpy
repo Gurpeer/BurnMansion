@@ -28,7 +28,7 @@ default chamber_entrance_exit_loc = place("Exit entrance", (755, 1047), Jump('of
 # default office_fire_loc = place("fire", (0, 0), None, "office_fire")
 
 default chamber_entrance_map = maps(
-    "Chamber entrance",
+    "Chamber gate",
     [
     #    "chamber insert",
         # "office_sky",
@@ -52,6 +52,7 @@ label chamber_entrance:
 
 
 label chamber_entrance_door:
+
     if check_door == False:
         burn "Oh, I remember this. This is one of my many genius creation."
         burn "I wanted something unique and unusual kind of secret chamber with a locked door"
@@ -63,15 +64,29 @@ label chamber_entrance_door:
         $ check_door = True
         jump chamber_entrance
 
-    if chamber_diamond_collected == False:
-        # $ chamber_entrance_map.rem("chamber insert")
-        # $ chamber_entrance_map.discover("chamber diamond")
-        burn "Hm... missing something here"
-        # $ chamber_diamond_collected = True
+    # if chamber_diamond_collected == False:
+    #     # $ chamber_entrance_map.rem("chamber insert")
+    #     # $ chamber_entrance_map.discover("chamber diamond")
+    #     burn "Hm... missing something here"
+    #     # $ chamber_diamond_collected = True
+    #     jump chamber_entrance
+
+    if chamber_diamond_collected == True:
+        jump chamber
+
+    if chamber_diamond_collected == False and player.bags[0].exist(blue_gem, 1) and player.bags[0].exist(green_gem, 1) and player.bags[0].exist(red_gem, 1):
+        burn "Got all the parts needed, about time I place it where It belongs "
+        $ chamber_entrance_map.rem("chamber insert")
+        $ chamber_entrance_map.discover("chamber diamond")
+        burn "There we go, I should be able to open it now"
+        $ player.drop(blue_gem, 1), player.drop(red_gem, 1), player.drop(green_gem, 1)
+        $ check_door == False
+        $ chamber_diamond_collected = True
         jump chamber_entrance
 
-    elif chamber_diamond_collected == True:
-        jump chamber
+    else:
+        burn "Hm.. missing something here"
+        jump chamber_entrance
 
 # label office_football:
 #     burn "Ahh HA, a signed football"

@@ -34,11 +34,17 @@ default burn_room_camera_loc = place("camera", (1419, 727), Jump('burn_room_came
 default burn_room_arrow_loc = place("Back", (962, 952), Jump('main_hall'), "maps/office/arrow.png")
 default burn_room_bed_loc = place("bed", (650, 558), Jump('burn_room_bed'), "maps/burn room/bed.png")
 default burn_room_mask_loc = place("beard mask", (749, 402), Jump('burn_room_beardmask'), "maps/burn room/beard mask.png")
+default burn_room_seller_loc = place("Seller", (261, 454), Jump('burn_room_seller'), "maps/burn room/seller figure.png")
 #default burn_room_sword_loc = place("fire", (0, 0), None, "office_fire")
 
+
 default burn_room_map = maps(
-    "Office",
+    "Burn Room",
     [
+        "water_tank",
+        "fish_tank_move",
+        "bubble_tank",
+        "water_frame",
         burn_room_sword_loc,
         burn_room_camera_loc,
         burn_room_arrow_loc,
@@ -49,16 +55,94 @@ default burn_room_map = maps(
 
 label burn_room:
     scene burn room bg
-    show water_tank
-    show fish_tank_move
-    show bubble_tank
-    show water_frame
+    if seller_npc == True:
+        $ burn_room_map.discover(burn_room_seller_loc)
+    # show water_tank
+    # show fish_tank_move
+    # show bubble_tank
+  #  show water_frame
     show screen map(burn_room_map)
     pause
     jump burn_room
 
 label burn_room_sword:
     burn "A knight sword, but it looks pretty heavy to carry.."
+    jump burn_room
+
+label burn_room_seller:
+    hide screen map
+    scene burn room blur
+    show seller_base at seller_position 
+    show burn_base at left
+    $ burns_face = "normal"
+    $ seller_face = "normal"
+    menu:
+        "{color=#bf2b21} BUY ~ {/color} Scratchy Personal Instrument $ 85" if not player.bags[0].exist(cat_instrument, 0):
+            burn "Is this the instrument that call Scratchy?"
+            seller "Yes"
+            burn "Why you even have this item ? "
+            seller "Scratchy personally left it to me to call him, but I never did and have no use for it"
+            seller "So, I just decided to sell it "
+            burn ". . . ."
+            seller ". . . "
+            burn "Just give me the damn instrument, I'll buy it"
+            if mr_burns.cash < 86:
+                burn "Shit. . ."
+                seller "Sir ?"
+                burn "... *I don't have the cash to buy this..*"
+                burn "Actually, you know what. Second thought, I'll come back and buy it later"
+                seller "Ok"
+                jump burn_room_seller
+            else:
+                show instrument_cat_item_frame
+                "Obtained Scratchy Instrument"
+                pause
+                hide instrument_cat_item_frame
+                $ player.got(cat_instrument, 1)
+                $ mr_burns.lose_cash(85)
+                jump burn_room_seller       
+
+        "{color=#59ab1a} SELL~ {/color} Doom Armour - $ [doom_armor.price]" if player.bags[0].exist(doom_armor, 1):
+            burn "Selling this Doom armour"
+            $ seller_face = "happy"
+            seller "Why my, this is a very stunning hard armour"
+            seller "Do you not know who Doom is ?"
+            burn "No."
+            $ seller_face = "normal"
+            seller "*Hehe.. can trick him to selling it for cheap price despite not knowing the infamous villain*"
+            seller "I'll take it for [doom_armor.price]"
+            burn "Ok"
+            $ player.drop(doom_armor, 1)
+            $ mr_burns.got_cash(35)
+            jump burn_room_seller
+
+        "{color=#59ab1a} SELL ~ {/color} Default Sword - $ [default_sword.price]" if player.bags[0].exist(default_sword, 1):
+            seller "I'll take it for [default_sword.price]"
+            burn "Ok"
+            $ player.drop(default_sword, 1)
+            $ mr_burns.got_cash(25)
+            jump burn_room_seller      
+
+        "{color=#59ab1a} SELL ~ {/color} Signed Football - $ [signed_ball.price]" if player.bags[0].exist(signed_ball, 1):
+            seller "I'll take it for [signed_ball.price]"
+            burn "Wait what !?!"
+            seller "What?"
+            burn "This is a SIGNATURE signed by a celebrity in Football and you want to sell me [signed_ball.price] !"
+            $ seller_face = "sad"
+            seller "Hmm..... I think he was a underrated not so popular football player, Mr. Burn"
+            seller "The man barely was even a hall a famer, let alone his worth"
+            seller "I'm being nice and buy it for that price otherwise, I can buy it for lower if you want"
+            burn "HAHA..  ha nono, I think [signed_ball.price] is more then enough "
+            $ seller_face = "happy"
+            seller "Ok"
+            $ player.drop(signed_ball, 1)
+            $ mr_burns.got_cash(45)
+            jump burn_room_seller
+    
+
+        "Leave":       
+            jump burn_room
+
     jump burn_room
 
 label burn_room_camera:

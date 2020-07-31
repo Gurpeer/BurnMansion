@@ -87,11 +87,54 @@ label office_weylon:
             burn "HA, you know what I want, WAIT. Why do you know this.. ?"
             weylon "Hm.. welll. . . . *ahem* SIR, as I was saying, make her meet your coniditon. However if she show some sort of resistent and tries to do something like calling the cops, I have your back on that."
             weylon "We can lockdown the mansion and she wouldn't be able to call the police and have her gass out, and have her in your chamber if you have unlocked it already"
+            weylon "However, there is a slight problem.."
+            burn "? . ."
+            weylon "The gas isn't turned on properly"
+            weylon "We need to call in Scratchy to get him to go thro the small rat tunnel and activate it so I can trigger it with my remote"
+            burn "Wait, Scratchy?... you mean the pychopath looking cat with MUSCLE"
+            weylon "Yes, he lives in this mansion, just hiding in some sneaky location"
+            weylon "But, we can call him out and get him to activate the gas"
+            burn "Where can I find this cat ?"
+            weylon "You need a special instrument to call him"
+            burn ".... ok, where exactly is this instrument tool ?"
+            weylon "There is this seller that has the instrument which you can buy"
+            weylon "You can ask me anytime when you want to call the Seller over"
+            burn "Okay anyways"
             burn "I like this, be sure you make no mistake Weylon"
             weylon "Yes, sir."
             burn "Now, I shall do my deeds"
+            $ seller_call = True
             $ ashley_story += 1
             jump  office_weylon
+
+        "Scratchy Instrument" if player.bags[0].exist(cat_instrument, 1):
+            burn "I have the instrument.. how do I call him ?"
+            weylon "There is a little tiny hole at the hallway, go near it and call him with the instrument you have"
+            burn "Ok"
+            jump office_weylon
+
+        "Firecamp" if office_firecamp_key == True:
+            burn "I remember this firecamp would open easily"
+            burn "Why isn't it openeing properly?"
+            weylon "Sir, I added a lock to it, so you would need a key to open it"
+            burn "When did I ever need A KEY!?!?"
+            weylon "Sir, people were able to go in and out whenever they wanted"
+            weylon "and.  . ."
+            burn ". . . . actually you know what"
+            burn "Just give me the key"
+            weylon "Sure, here you go"
+            show key_item_frame
+            "You obtained a key !"
+            pause
+            $ player.got(office_key, 1)
+            $ office_firecamp_key = False
+            hide key_item_frame
+
+        "Call the Seller" if seller_call == True:
+            burn "Call him now to my room"
+            weylon "Right away !"
+            $ seller_npc = True
+            jump office_weylon
 
         "Chamber door" if check_door == True:
             burn "WEYLON !"
@@ -111,22 +154,22 @@ label office_weylon:
             burn "AHH yes , that's right. "
             jump office_weylon
 
-        "Burn Sinister Head test":
-            $ burns_accessory = "sinister"
-            burn "..."
-            weylon "*laughs*"
-            $ burns_face = "normal_t"
-            burn "wut"
-            $ burns_face = "normal"
-            weylon "U got a sinister on your head . "
-            $ burns_face = "normal_t"
-            burn "What....the"
-            $ burns_face = "angry"
-            burn "*wipes it off*"
-            $ burns_face = "normal"
-            $ burns_accessory = "none"
-            $ burns_face = "normal_t"
-            burn "ahem"
+        # "Burn Sinister Head test":
+        #     $ burns_accessory = "sinister"
+        #     burn "..."
+        #     weylon "*laughs*"
+        #     $ burns_face = "normal_t"
+        #     burn "wut"
+        #     $ burns_face = "normal"
+        #     weylon "U got a sinister on your head . "
+        #     $ burns_face = "normal_t"
+        #     burn "What....the"
+        #     $ burns_face = "angry"
+        #     burn "*wipes it off*"
+        #     $ burns_face = "normal"
+        #     $ burns_accessory = "none"
+        #     $ burns_face = "normal_t"
+        #     burn "ahem"
             
         "Nothing, weylon":
             jump office_weylon 
@@ -138,10 +181,25 @@ label office_weylon:
     jump office
 
 label office_firecamp:
-    # burn "You can burn a body in it."
-    # burn "Wait a minute. . ."
-    # burn "There is something in here... why don't I remember what this is?... seem to be a entrance to somewhere in here"
-    jump chamber_entrance
+    
+    if player.bags[0].exist( office_key, 1):
+        burn "There we go, there was a key right next to it"
+        burn "*Inserts the key*"
+        $ player.drop(office_key, 1)
+        $ office_firecamp_open = True
+    #    $ renpy.notify("Key was used")
+        jump chamber_entrance
+
+    elif office_firecamp_open == True:
+        jump chamber_entrance
+
+    else:
+        burn "You can burn a body in it."
+        burn "Wait a minute. . ."
+        burn "There is something in here... why don't I remember what this is?... seem to be a entrance to somewhere in here"
+        burn "Weylon.... he might know"
+        $ office_firecamp_key = True
+        jump office
    # jump office
 
 label office_picture:
@@ -168,6 +226,10 @@ label office_fossil:
 label office_football:
     burn "Ahh HA, a signed football"
     burn "This will definitly sell me some good price !"
+
+    show football_item_frame onlayer over_screens
+    "A signed football !"
+    hide football_item_frame onlayer over_screens
     $ office_map.rem(office_football_loc)
     $ player.got(signed_ball, 1)
     jump office

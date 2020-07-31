@@ -14,14 +14,22 @@
 # Define all items here
 default signed_ball = item(
     "signed Ball",
-    200,
+    45,
     "items/icons/football_icon.png",
     "Signed John, must be worth millions!",
 )
 
+
+default doom_armor = item(
+    "Doom Armor",
+    35,
+    "items/icons/doom_armor_icon.png",
+    "Mystery looking doom armor, sellable",
+)
+
 default knight_sword = item(
     "A Knight Sword",
-    80,
+    66,
     "items/icons/knight_sword_icon.png",
     "A fine craftsman by a amateur Blacksmith",
 )
@@ -56,8 +64,8 @@ default spa_book = item(
 
 default default_sword = item(
     "Default sword",
-    40,
-    "items/icons/default_sword.png",
+    25,
+    "items/icons/default_sword_icon.png",
     "A basic default sword",
 )
 
@@ -87,4 +95,18 @@ default green_gem = item(
     0,
     "items/icons/green_gem_icon.png",
     "Part of the piece used on the dungeon door",
+)
+
+default cat_instrument = item(
+    "Scratchy Personal instrument",
+    0,
+    "items/icons/cat_instrument_icon.png",
+    "This is a personal item made to call out Scratchy",
+)
+
+default ladder_home = item(
+    "Ladder",
+    0,
+    "items/icons/ladder_icon.png",
+    "A ladder",
 )

@@ -70,6 +70,10 @@ define config.has_voice = True
 ## Each variable should be set to a transition, or None to indicate that no
 ## transition should be used.
 
+## screen layer control
+define config.layers = ['master', 'transient', 'screens', 'over_screens', 'overlay']
+
+
 ## Entering or exiting the game menu.
 
 define config.enter_transition = dissolve
