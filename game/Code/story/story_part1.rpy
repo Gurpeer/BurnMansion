@@ -50,7 +50,7 @@ label story_1:
     burn "That should let them know who not to MESS with."
     scene yesman_alone with dissolve
     pause
-    scene burn_office blur with dissolve
+    scene office blur with dissolve
     show burn_base at left
     $ burns_face = "normal"
     $ burns_hands = "3"

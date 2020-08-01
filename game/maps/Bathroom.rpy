@@ -17,7 +17,6 @@ default bathroom_towel_loc = place("Towel", (1055, 476), Jump('bathroom_towel'),
 default bathroom_greengem_loc = place("Green_gem", (165, 250), Jump('bathroom_greengem'), "maps/bathroom/green_gem.png")
 default bathroom_bathtub_loc = place("Bathtub", (1281, 839), Jump('bathroom_bathtub'), "maps/bathroom/washroom_tub.png")
 
-
 default bathroom_map = maps(
     "Bathroom",
     [
@@ -35,6 +34,10 @@ default bathroom_map = maps(
     )
 
 label bathroom:
+    if ashley_story == 3:
+        $ bathroom_map.rem(bathroom_ashley_loc)
+        $ ashley_story += 1
+
     scene washroom bg
    # show bathroom_air
     show screen map(bathroom_map)
@@ -42,9 +45,19 @@ label bathroom:
     jump bathroom
 
 label bathroom_lock:
-    burn "looks like a lock and... I can't even get up there"
-    burn "Might need to find a ladder or some kind to reach it"
-    jump bathroom
+    hide screen map  
+    if player.bags[0].exist(ladder_home, 1):
+        scene bathroom_lockstorage_bg
+        burn "AH ha, there we go, finally up here"
+        burn "Seems like I have no use to unlock this for now"
+        burn "There's other things I need to finish first"
+        burn "... I just notice the piece is also missing... *sign*"
+        burn "Entering the password would be useless without the piece"
+        jump bathroom
+    else:
+        burn "looks like a lock and... I can't even get up there"
+        burn "Might need to find a ladder or some kind to reach it"
+        jump bathroom
 
 label bathroom_clay:
     burn "Please take me."
@@ -82,13 +95,14 @@ label bathroom_ashley:
         
     if ashley_story == 1:
         burn "Should talk to Weylon about her, don't exactly know what to do with her"
-
-    if chamber_access == False and ashley_story == 2:
-        burn "I have not unlocked the Chamber yet to execute my brilliant plan and it's better I talk to her next day"
         jump bathroom
+    # if chamber_access == False and ashley_story == 2:
+    #     burn "I have not unlocked the Chamber yet to execute my brilliant plan and it's better I talk to her next day"
+    #     jump bathroom
 
 
     else:
+        burn "Talk to her later, not now"
     #    burn "Triggers first event scene dialogue."
         jump bathroom
 

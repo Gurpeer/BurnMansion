@@ -20,6 +20,10 @@ image hallway_fire:
     .25
     repeat
 
+transform weylon_flip_position:
+    xalign 0.3
+    ypos 0.65
+
 default hallway_hall_loc = place("Hall Door", (587, 260), Jump('front_hall'), "maps/hallway/front door.png")
 default hallway_left_loc = place("Hall Left", (0, 146), Jump('burn_room'), "maps/hallway/burn door.png")
 default hallway_bathroom_loc = place("Hall Bathroom", (168, 201), Jump('bathroom'), "maps/hallway/bathroom door.png")
@@ -90,11 +94,59 @@ label hallway_rathole:
         $ scratchy_face = "look"
         $ burns_face = "normal_t"
         burn "... I can't understand what this buffy cat even saying... god dammit"
-        burn "*What now... I'm talking to a Cat that i cant even understand..*"
-
-        "not finished"
-        hide burn_base onlayer screens at left
+        burn "Listen here, cat"
+        burn "I need you to reactivate the gas"
+        $ burns_face = "normal"
+        $ scratchy_face = "talk"
+        scratchy "*MEWOWWEOW* mewow... meow. "
+        $ burns_face = "normal_t"
+        $ scratchy_face = "normal"
+        burn ". . ?"
+        burn "is that a yes or no ?"
+        $ burns_face = "normal"
+        $ scratchy_face = "talk"
+        scratchy "Meow."
+        $ burns_face = "normal_t"
+        $ scratchy_face = "look"
+        burn "I probaly need to call Weylon here"
+        $ burns_hands = "phone"
+        burn "*Calls Weylon*" 
+        weylon "Yes ?"
+        $ burns_face = "angry_t"
+        burn "Get over here NOW !"
+        $ burns_face = "normal"
+        weylon "Ok, sir"
+        $ burns_hands = "3"
+        $ burns_face = "normal"
+        show weylon normal onlayer screens at weylon_flip_position:
+            xzoom -1
+        weylon "Yes, you need somethin.."
+        weylon "*Mew mewowow*"
+        $ scratchy_face = "talk"
+        scratchy "MEOWWOW"
+        $ scratchy_face = "normal"
+        weylon "Ah yes, I understand"
+        weylon "Meow meeeow mee meow"
+        $ scratchy_face = "look"
+        scratchy "Meo e meeeeeeeow"
+        $ scratchy_face = "normal"
+        weylon "Well, that settles it."
+        weylon "Sir, he will activate it, but it'll work next day."
+        burn ". . . ."
+        burn "*what did I just witnes ?*"
+        weylon "Sir ?"
+        $ burns_face = "normal_t"
+        burn "*AHEM*, ok"
+        burn "You may leave Weylon and you Scratchy... *I probably need to find some sort of tool to communicate with this Cat*"
+        $ burns_face = "normal"
         hide scratchy_base onlayer screens at right
+        hide weylon normal onlayer screens at weylon_flip_position
+        burn ". . . ."
+        $ burns_face = "normal_t"
+        burn "Well, I should just stay away from that rat hole for now"
+        $ burns_face = "normal"
+        $ ashley_story += 1
+        hide burn_base onlayer screens at left
         jump main_hall
 
     else:
@@ -137,7 +189,7 @@ label hallway_redgem:
     else:
         burn "That's too high for me to grab"
         burn "Going to need some sort of ladder or something to reach it"
-
+        jump main_hall
 
 label hallway_allison:
     if allison_story == 0:

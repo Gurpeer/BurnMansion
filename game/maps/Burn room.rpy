@@ -54,9 +54,11 @@ default burn_room_map = maps(
     )
 
 label burn_room:
-    scene burn room bg
     if seller_npc == True:
         $ burn_room_map.discover(burn_room_seller_loc)
+        
+
+    scene burn room bg
     # show water_tank
     # show fish_tank_move
     # show bubble_tank
@@ -154,6 +156,49 @@ label burn_room_camera:
 
 
 label burn_room_bed:
+    hide screen map
+    scene burn room blur
+    menu:
+        "Sleep":
+            if ashley_story == 4:
+                $ ashley_story += 1
+
+                if seller_npc == True:
+                    $ seller_npc = False
+                    $ burn_room_map.rem(burn_room_seller_loc)
+
+                scene black with dissolve
+                pause
+                "Next morning"
+                weylon "*Calling Burn*"
+                burn " . . . what the... who's call is this "
+                burn "Yes ?"
+                weylon "It's me sir, the gas is activated. It's about time you talk to Ashley "
+                burn "Finally *HAHAHAHAAAAAAAAAA*"
+                burn "Ok, be ready and don't fail me"
+                weylon "Don't worry sir, I won't"
+                burn "*Hangs the phone....*"
+                burn "Ok, my energy is high today for some reason"
+                scene burn room blur with dissolve
+                "Ah, my back feels nice"
+                jump burn_room
+
+            else:
+                if seller_npc == True:
+                    $ seller_npc = False
+                    $ burn_room_map.rem(burn_room_seller_loc)
+                    
+                scene black with dissolve
+                pause
+                "Next morning"
+                scene burn room blur with dissolve
+                "Ah, my back feels nice"
+                jump burn_room
+        "Nah":
+            jump burn_room     
+            
+
+
     burn "Don't really feel sleepy yet"
     jump burn_room
 

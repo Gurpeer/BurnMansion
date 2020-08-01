@@ -51,7 +51,7 @@ image side allison = "char/allison/icon.png"
 
 
 #chamber stuff
-default chamber_access = False
+# default chamber_access = False
 default check_door = False
 default office_firecamp_key = False
 default office_firecamp_open = False

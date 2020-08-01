@@ -53,7 +53,7 @@ label chamber_entrance:
 
 label chamber_entrance_door:
 
-    if check_door == False:
+    if check_door == False and chamber_diamond_collected == False:
         burn "Oh, I remember this. This is one of my many genius creation."
         burn "I wanted something unique and unusual kind of secret chamber with a locked door"
         burn "The password or simple lock is super boring and lame, so I came up with this genius idea"
@@ -80,7 +80,7 @@ label chamber_entrance_door:
         $ chamber_entrance_map.discover("chamber diamond")
         burn "There we go, I should be able to open it now"
         $ player.drop(blue_gem, 1), player.drop(red_gem, 1), player.drop(green_gem, 1)
-        $ check_door == False
+        $ check_door = False
         $ chamber_diamond_collected = True
         jump chamber_entrance
 

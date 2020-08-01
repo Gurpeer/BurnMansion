@@ -24,6 +24,8 @@ default fhall_demonpic_loc = place("Demon lord", (0, 106), Jump('fhall_demon'), 
 
 default fhall_queenpic_loc = place("Queen", (673, 479), Jump('fhall_queen'), "maps/front hallway/queen.png")
 
+default ashley_sweep_loc = place("Ashley", (1183, 422), Jump('fhall_ashley'), "maps/front hallway/ashley_sweep.png")
+
 default fhall_kingpic_loc = place("King", (501, 425), Jump('fhall_king'), "maps/front hallway/king pic.png")
 
 default fhall_smoke_loc = place("smoke", (155, 510), None, "mindy_smoke")
@@ -48,6 +50,10 @@ default front_hall_map = maps(
     )
 
 label front_hall:
+    if ashley_story == 5:
+        $ front_hall_map.discover(ashley_sweep_loc)
+        $ ashley_story += 1
+
     scene main hall bg
     show screen map(front_hall_map)
     pause
@@ -69,6 +75,16 @@ label fhall_black_shield:
     burn "This looks sellable"
     burn "pick up."
     jump front_hall
+
+label fhall_ashley:
+    if chamber_diamond_collected == False and ashley_story < 5:
+        burn "I probably haven't unlocked the chamber or I'm missing something"
+        jump front_hall
+    elif chamber_diamond_collected == True and ashley_story == 6:
+        jump ashley_event2
+    else:
+        burn ". . . probably haven't unlocked the chamber or I'm missing something"
+        jump front_hall
 
 label fhall_mindy:
     burn "Trigger first event dialogue."
