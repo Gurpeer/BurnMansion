@@ -125,7 +125,7 @@ label fmansion_bluegem:
     "Obtained a blue diamond"
     hide bluegem_item_frame onlayer screens
     $ front_mansion_map.rem(fmansion_bluegem_loc)
-    $ player.got(ashley_business_suit, 1)
+    $ player.got(blue_gem, 1)
     jump front_mansion
 
 

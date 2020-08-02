@@ -48,8 +48,8 @@ label bathroom:
     jump bathroom
 
 label bathroom_lock:
-    hide screen map  
     if player.bags[0].exist(ladder_home, 1):
+        hide screen map  
         scene bathroom_lockstorage_bg
         burn "AH ha, there we go, finally up here"
         burn "Seems like I have no use to unlock this for now"

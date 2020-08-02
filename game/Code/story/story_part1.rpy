@@ -113,7 +113,7 @@ label story_1:
     scene black
     centered "{=scene_text}Burns leaves the Maid out of his office. Leaving the maid all speechless{/=scene_text}" with dissolve
     centered "{=scene_text} . . . . {p} Weylon shows up to his office{/=scene_text}" with dissolve
-    scene burn_office blur with dissolve
+    scene office blur with dissolve
     show burn_base at left
     show weylon normal at right with dissolve
     $ burns_face = "normal_t"
