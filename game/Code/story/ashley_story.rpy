@@ -209,6 +209,277 @@ label ashley_event2:
     "burns fainted"
     $ burns_hands = "4"
     $ burns_face = "sleep"
+    jump chamber_ashley_bedscene
+
+label chamber_ashley_bedscene:
+    scene black with dissolve
+    scene bed_scene_chamber with dissolve
+    show ashley_scene_base
+    $ ashley_scene_face = "angry"
+    $ ashley_scene_clothe = "panty"
+    $ ashley_special_clothe = "rope"
+    burn "What the, she looks all roped up"
+    burn "*God bless Weylon, he executed my plan just perfectly, even the rope idea*"
+    $ ashley_scene_face = "angry_t"
+    ashley "What ARE YOU DOING?!?"
+    ashley "i swear, once I get out. I will report you !"
+    $ ashley_scene_face = "angry"
+    burn "hahahaaaaa, and how will you get out when you are tied up? Miss. Ashley Grant"
+    ashley " . . ."
+    $ ashley_scene_face = "please"
+    ashley ".."
+    $ ashley_scene_face = "please_t"
+    ashley "Oh no...."
+    $ ashley_scene_face = "please"
+    burn "That's right, you shall be punished with your rudeness"
+    burn "It's about time, I teach you a solid lesson , Miss. Ashley"
+    $ ashley_scene_face = "please_t"
+    ashley "... what are you going to do to me?..."
+    $ ashley_scene_face = "please"
+    burn "You will see"
+
+label chamber_ashley_scene: 
+ #   $ ashley_scene_clothe = "panty"
+    $ ashley_scene_tit = "base"
+    scene bed_scene_chamber
+    show ashley_scene_base
+    if ashley_scene_face == "ahego3" or ashley_scene_face == "ahego4":
+        burn "She seems pretty much done, kinda exhasted her. Don't think I can continue any further at this point"
+        jump ashley_scene_leave
+    menu:
+       # $ gui.navigation_xpos = 200
+        "Whip her left leg":
+            if left_leg_pain == 3:
+                show left_leg_whip
+                $ ashley_scene_face = "ouch"
+                ashley "Ouch. .  *I see my bruise now... but.. it kinda feels good?*"
+                $ ashley_leftpain = "leftleg"
+                $ ashley_scene_face = "ahego"
+                $ left_leg_pain += 1
+                jump chamber_ashley_scene
+
+            if left_leg_pain == 4:
+                burn "I shouldn't go any futher, she probably will get more piss if I keep doing this"
+                jump chamber_ashley_scene
+
+            else:
+                show left_leg_whip
+                $ ashley_scene_face = "ouch"
+                ashley "ow...."
+                $ ashley_scene_face = "please"           
+                $ left_leg_pain += 1
+                jump chamber_ashley_scene
+
+
+        "Whip her right leg":
+            if right_leg_pain == 3:
+                show right_leg_whip
+                $ ashley_scene_face = "ouch"
+                ashley "Ouch. .  . . this is feeling good ?.. NO I must not admit it*"
+                $ ashley_rightpain = "rightleg"
+                $ ashley_scene_face = "ahego"
+                $ right_leg_pain += 1
+                jump chamber_ashley_scene
+
+            if right_leg_pain == 4:
+                burn "I shouldn't go any futher, she probably will get more piss if I keep doing this"
+                jump chamber_ashley_scene
+
+            else:
+                show right_leg_whip
+                $ ashley_scene_face = "ouch"
+                ashley "ow...."
+                $ ashley_scene_face = "please"           
+                $ right_leg_pain += 1
+                jump chamber_ashley_scene
+
+
+        "Take off rope":
+            if ashley_special_clothe == "none":
+                burn "It is already off"
+                jump chamber_ashley_scene
+
+            if ashley_dominance > 3:
+                burn "About time, I take that rope off so I could. . hehe"
+                $ ashley_special_clothe = "none"
+                burn "Nice, there we go . Got it off"
+                ashley " . . ."
+                jump chamber_ashley_scene
+            else:
+                burn "Nope, don't have such power to take it off"
+                jump chamber_ashley_scene
+
+
+        "Caress her boobs":
+            if ashley_special_clothe == "rope":
+                burn "I can't caress her with that rope on, need to take it off"
+                jump chamber_ashley_scene
+            else:
+                show tit_hand_ashley
+                $ ashley_scene_tit = "none"
+                pause
+                burn "Nice, that felt sort of soft"
+                $ ashley_scene_face = "ahego2"
+                ashley ". . . ."
+                jump chamber_ashley_scene
+
+        "Take off her panty":
+            if ashley_dominance > 5:
+                burn "Let's get that panty off, got enough dominace on her to do it"
+                $ ashley_scene_clothe = "none"
+                burn "There we go"
+                $ ashley_scene_face = "please"
+                ashley ". . . ."
+                jump chamber_ashley_scene
+            else:
+                burn "Don't have such dominane yet"
+                jump chamber_ashley_scene
+
+
+        "Vibrator":
+            if ashley_dominance > 6 and ashley_scene_clothe == "none":
+                show pic ashley vibrator
+                burn "I guess, this is where it should simulate her"
+                $ ashley_scene_face = "please_t"
+                ashley "Sir, please. Not there !"
+                burn "Alrite, let's start it up"
+                $ ashley_scene_face = "please"
+                "triggers it"
+                $ ashley_scene_face = "please_t"
+                ashley "Nooo"
+                $ ashley_scene_face = "ahego2"
+                hide pic ashley vibrator
+                show ashley_vibrator
+                pause
+                burn "I guess we should keep it going and more faster"
+                ashley ". . no...n.."
+                hide ashley_vibrator
+                show ashley_vibrator_fast
+                $ ashley_scene_face = "ahego3"
+                pause
+
+                if ashley_scene_pose == "1":
+                    $ ashley_scene_orgasm = "wetclose" 
+                if ashley_scene_pose == "2":
+                     $ ashley_scene_orgasm = "wetopen"
+                hide ashley_vibrator
+                hide ashley_vibrator_fast
+                burn "Ah nice !"
+                burn "Her face looks kinda well satisfied... even her area got pretty wet hahah !"
+                jump chamber_ashley_scene
+
+            if ashley_dominance > 6 and ashley_scene_clothe == "panty":
+                "She has her panties on, can't do it"
+                jump chamber_ashley_scene
+            else:
+                "Don't have such dominance to do it"
+                jump chamber_ashley_scene
+
+        "Command to open her legs":
+            if ashley_dominance > 8:
+                burn "open your legs Ashley"
+                ashley "Yes, [ashley_call_burn]" 
+                $ ashley_scene_pose = "2"
+                jump chamber_ashley_scene
+            else:
+                burn "Don't have such dominance yet to command her"
+                jump chamber_ashley_scene
+
+        "Penetrate":
+            if ashley_dominance > 10 and ashley_scene_pose == "2" and ashley_scene_clothe == "none":
+                show pic ashley penis
+                burn "This is about the right position"
+                $ ashley_scene_face = "normal"
+                ashley "*He is really about to put it in, couldn't wait any longer with the torture*"
+                burn "OK"
+                hide pic ashley penis
+                show ashley_penetrate
+                $ ashley_scene_face = "ahego2"
+                burn "Ahha, this feels real goodd"
+                pause
+                burn "Let's thrust it even faster"
+                ashley " . . ."
+                ashley "*I cant, I'm about to . .*"
+                $ ashley_scene_orgasm = "wetopen"
+                $ ashley_scene_face = "ahego3"
+                hide ashley_penetrate
+                show ashley_penetrate_fast
+                burn "I think I'm going too "
+                burn "ARGh haaa"
+                ashley "*orgasm*"
+                hide ashley_penetrate_fast
+                $ ashley_scene_orgasm = "cum"
+                $ ashley_scene_face = "ahego4"
+                scene black with dissolve
+                pause
+                scene bed_scene_chamber
+                show ashley_scene_base
+                "Seems like the cum is flowing out of her pussy"
+                burn "ha.... *haaa...* wow, that felt real good"
+                ashley ". . . ."
+                hide ashley_penetrate_fast
+                jump chamber_ashley_scene
+
+            if ashley_scene_pose == "1":
+                "Can't stick it in when she is in this pose, need to open her legs more"
+                jump chamber_ashley_scene
+
+            if ashley_dominance > 10 and ashley_scene_pose == "2" and ashley_scene_clothe == "panty":
+                "She has her panty on, can't do it"
+                jump chamber_ashley_scene
+
+            else:
+                "Don't have such dominace yet to penetrate her her"
+                jump chamber_ashley_scene
+
+        "Leave":
+            if ashley_dominance == 0:
+                if left_leg_pain == 4 or right_leg_pain == 4 and ashley_dominance == 0:
+                    burn "There we go, punished enough"
+                    jump ashley_scene_leave
+                else:
+                    "Still need to punish her"
+                    jump chamber_ashley_scene
+            else:
+                jump ashley_scene_leave
+
+
+label ashley_scene_leave:
+    if left_leg_pain == 4 or right_leg_pain == 4 and ashley_dominance == 0:
+        $ ashley_dominance += 1
+        "You have increased Ashley's dominance by [ashley_dominance]"
+    # if ashley_scene_face == "ahego3" and ashley_dominance == "2"
+
+    $ ashley_leftpain = "none"
+    $ left_leg_pain = 0
+    $ right_leg_pain = 0
+    $ ashley_leftright = "none"
+    $ ashley_scene_orgasm = "none"
+    $ ashley_scene_face = "normal"
+
+    if ashley_dominance == 1:
+        $ burns_face = "normal"
+        $ burns_hands = "3"
+        $ ashley_face = "confuse"
+        $ ashley_clothe = "none"
+        $ ashley_underwear = "panty"
+        hide ashley_scene_base with dissolve
+        scene bed_scene_chamber with dissolve
+        show burn_base at left with dissolve
+        show ashley_base at right with dissolve
+        burn "Have you learned your lesson ?"
+        $ ashley_face = "confuset"
+        ashley ". . .yes sir."
+        $ burns_face = "normal_t"
+        $ ashley_face = "confuse"
+        burn "Good.Now you shall take over my desk at the office, and I must see you there when I'm at the Office at all time"
+        burn "Is that clear Miss. Ashley Grant ?"
+        $ ashley_face = "confuset"
+        ashley "Yes, [ashley_call_burn]"
+        $ ashley_story += 1
+        jump chamber 
+    else:
+        jump chamber
 
     pause
     ""

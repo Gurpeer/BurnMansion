@@ -53,6 +53,9 @@ label front_hall:
     if ashley_story == 5:
         $ front_hall_map.discover(ashley_sweep_loc)
         $ ashley_story += 1
+    if ashley_story == 7:
+        $ front_hall_map.rem(ashley_sweep_loc)
+        $ ashley_story += 1       
 
     scene main hall bg
     show screen map(front_hall_map)

@@ -66,6 +66,10 @@ default allison_story = 0
 
 ## Ashley Event Story
 default ashley_story = 0
+default ashley_dominance = 0
+default ashley_call_burn = "Sir"
+default left_leg_pain = 0
+default right_leg_pain = 0
 
 ## Guards
 default guard_dialogue = 0
