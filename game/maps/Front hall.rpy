@@ -90,7 +90,11 @@ label fhall_ashley:
         jump front_hall
 
 label fhall_mindy:
-    burn "Trigger first event dialogue."
+    if ashley_story == 10 and ashley_waist == 1:
+        jump ask_mindy_ashley_waist
+
+
+    burn "."
     jump front_hall
 
 # label fhall_entrance:

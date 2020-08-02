@@ -31,6 +31,7 @@ default office_fossil_loc = place("Fossil_fish", (1362, 533), Jump('office_fossi
 default office_headhorn_loc = place("head_horn", (975, 202), Jump('office_horn'), "maps/office/office_horn_head.png")
 default office_football_loc = place("football", (30, 928), Jump('office_football'), "maps/office/burn_office_football.png")
 default office_book_loc = place("book", (76, 863), Jump('office_book'), "maps/office/office_book.png")
+default office_ashley_loc = place("Ashley", (570, 601), Jump('office_ashley'), "maps/office/ashley office fig.png")
 default office_fire_loc = place("fire", (0, 0), None, "office_fire")
 
 default office_map = maps(
@@ -53,6 +54,11 @@ default office_map = maps(
     )
 
 label office:
+    if ashley_story == 12:
+        $ office_map.discover(office_ashley_loc)
+        $ ashley_story += 1
+
+
     scene office bg
     show screen map(office_map)
     pause
@@ -130,6 +136,44 @@ label office_weylon:
             $ seller_call = True
             $ ashley_story += 1
             jump  office_weylon
+
+        "Ashley" if ashley_story == 9:
+            $ burns_face = "normal_t"
+            burn "Weylon, I was able to punish her"
+            $ burns_face = "normal"
+            weylon "That's great, sir"
+            weylon "But did you get to pester her? sir"
+            $ burns_face = "hmm"
+            ". . ."
+            $ burns_hands = "4"
+            burn ". . . no"
+            burn "I didn't have enough balls or dominance over her yet, so I just told her to get back to work"
+            $ burns_hands = "3"
+            burn "But, how would I seal the deal 100 percent & have her back to the Chamber, where I can do my tangling"
+            $ burns_face = "normal"
+            weylon "Well sir, remember the offer you made her ?"
+            $ burns_face = "normal_t"
+            burn "? . . what offer"
+            $ burns_face = "normal"
+            weylon "Sir, you offered her Manager role "
+            $ burns_face = "hmm"
+            burn "Ahhhh . .  yes, but wasn't that all just an act ?"
+            $ burns_face = "normal"
+            weylon "It was, but you can still offer her the role, but in return to she must keep visitng you in the chamber whenever you ask her to and punish her even more"
+            $ burns_face = "normal_t"
+            burn "That's right, that's a brilliant plan"
+            $ burns_face = "laugh"
+            pause
+            $ burns_face = "normal"
+            weylon "But before, you offer her sir. You need to get her a business outfit"
+            weylon "And the rest, I'll teach her"
+            $ burns_face = "hmm"
+            burn "A business outfit? . . Does the seller guy sell fashion ?"
+            $ burns_face = "normal"
+            weylon "From what I remember, I'm pretty sure he does sells clothes. You probably might have to ask him about it"
+            $ burns_face = "normal_t"
+            burn "Ok"
+            jump office_weylon
 
         "Scratchy Instrument" if player.bags[0].exist(cat_instrument, 1) and ashley_story == 2:
             burn "I have the instrument.. how do I call him ?"
@@ -253,6 +297,38 @@ label office_horn:
     burn "... but.. hold up. Why is his eyes red?"
     burn "I'm probably just hallucinating"
     jump office
+
+label office_ashley:
+    hide screen map
+    $ ashley_clothe = "suit"
+    $ ashley_face = "normal"
+    $ ashley_arms = "2"
+    scene office blur
+    show ashley_base at right
+    $ burns_face = "normal"
+    show burn_base at left
+    menu:
+        "Outfit":
+            $ burns_face = "normal_t"
+            burn "How'd you like your new outfit ?"
+            $ ashley_face = "normalt"
+            ashley "Looks great, sir."
+            ashley "I always dreamed of feeling like a CEO in suit, and this just fits the taste"
+            $ burn_face = "hmm"
+            $ ashley_face = "normal"
+            burn "Good good, and what else ?"
+            $ burns_face = "normal"
+            $ ashley_face = "normalt"
+            ashley "... and your condition... of course sir."
+            $ burns_face = "laugh"
+            $ ashley_face = "confuse"
+            burn "Very very good *hahahaaaaaaaaa*"
+            $ burns_face = "normal_t"
+            burn "Anyways, I'll see you around"
+            jump office_ashley
+
+        "Leave":
+            jump office
 
 label office_fossil:
     burn "My very own expensive Fossil"

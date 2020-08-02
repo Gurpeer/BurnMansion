@@ -206,23 +206,28 @@ label ashley_event2:
     weylon "We don't have any sir, I brought mine from the store"
     $ burns_face = "hmm"
     burn ".......oh, fiddlesticks"
-    "burns fainted"
     $ burns_hands = "4"
-    $ burns_face = "sleep"
+    $ burns_face = "sleep"    
+    "burns fainted"
+    pause
     jump chamber_ashley_bedscene
 
 label chamber_ashley_bedscene:
     scene black with dissolve
-    scene bed_scene_chamber with dissolve
-    show ashley_scene_base
+    burn "Argh... my head hurts a bit"
+    burn "Wait, do I hear somethin?"
+    pause
     $ ashley_scene_face = "angry"
     $ ashley_scene_clothe = "panty"
     $ ashley_special_clothe = "rope"
+    scene bed_scene_chamber with dissolve
+    show ashley_scene_base with dissolve
+    pause
     burn "What the, she looks all roped up"
     burn "*God bless Weylon, he executed my plan just perfectly, even the rope idea*"
     $ ashley_scene_face = "angry_t"
     ashley "What ARE YOU DOING?!?"
-    ashley "i swear, once I get out. I will report you !"
+    ashley "I swear, once I get out. I will report you !"
     $ ashley_scene_face = "angry"
     burn "hahahaaaaa, and how will you get out when you are tied up? Miss. Ashley Grant"
     ashley " . . ."
@@ -472,7 +477,7 @@ label ashley_scene_leave:
         ashley ". . .yes sir."
         $ burns_face = "normal_t"
         $ ashley_face = "confuse"
-        burn "Good.Now you shall take over my desk at the office, and I must see you there when I'm at the Office at all time"
+        burn "Good. Now go back and continue your work, and pretend nothing has happened here"
         burn "Is that clear Miss. Ashley Grant ?"
         $ ashley_face = "confuset"
         ashley "Yes, [ashley_call_burn]"
@@ -481,7 +486,164 @@ label ashley_scene_leave:
     else:
         jump chamber
 
+
+
+
+label give_ashley_business_suit:
+    show burn_base onlayer screens at left with dissolve
+    $ ashley_clothe = "maid"
+    $ burns_face = "normal"
+    $ burns_hands = "3"
+    $ bathroom_map.rem(bathroom_ashley_loc)
+    show ashley_base onlayer screens at right with dissolve
+    $ burns_face = "normal_t"
+    burn "Hello again, Miss. Ashley. Good to see you"
+    $ burns_face = "normal"
+    $ ashley_face = "confuse"
+    ashley ". . . ."
+    ashley " . ."
+    burn "What with the Silent?"
+    $ ashley_face = "confuset"
+    ashley "I just. . . . . anyways why are you here again ?"
+    $ burns_face = "normal"
+    $ ashley_face = "confuset"
+    ashley "What do you want from me this time . . you faked the whole offer and even.. gave me that.....puni.. ugh..."
+    $ ashley_face = "confuse"
+    $ burns_face = "hmm"
+    burn "Are you going to keep being more rude ? Miss. Ashley"
+    $ burns_face = "normal"
+    $ ashley_face = "confuset"
+    ashley "No please, sir. I'm just being very light here"
+    ashley ". . . wha.. what do you need sir ?"
+    $ burns_face = "normal_t"
+    burn "About the fake offer, it wasn't fake. I was being very sincere on the offer, but you decided to turn on me and you got what has happened to you"
+    $ burns_face = "normal"
+    $ ashley_face = "normalt"
+    ashley "Wait, you mean the offer was real ?"
+    $ burns_face = "laugh"
+    $ ashley_face = "confuse"
+    burn "*tf... ba .. Bahahahaha* cough.. co.."
     pause
-    ""
-    ""
-    ""
+    $ burns_face = "normal"
+    burn "only if you knew.*"
+    pause
+    $ burns_face = "normal_t"
+    burn "Yes, It was. However, like I said. You must fall under the condition if you want this job"
+    $ burns_face = "normal"
+    $ ashley_face = "normalt"
+    ashley "ugh............*It's not too bad.... I don't think he will go any futher with me since all he did was...whip me with those thing.... anyways I'M sure It's worth the risk, this offer is literally my dream and I should take the opportunity*"
+    $ burns_face = "normal_t"
+    $ ashley_face = "normal"
+    burn "Well ?"
+    $ burns_face = "normal"
+    $ ashley_face = "normalt"
+    ashley "I'l... I'll take it Mr. Burn"
+    $ burns_face = "normal_t"
+    $ ashley_face = "normal"
+    burn "That is what I wanted to hear *hehe..*"
+    burn "Before I leave, you must wear this outfit ."
+    $ burns_face = "normal"
+    $ ashley_face = "confuset"
+    ashley ". . .ok"
+    pause
+    $ player.drop(ashley_business_suit, 1)
+    $ burns_face = "normal"
+    $ ashley_face = "normalt"
+    ashley "Ohh, this outfit looks really cool. I'll wear it and will head to the office asap"
+    $ burns_face = "normal_t"
+    $ ashley_face = "normal"
+    burn "Now, that's a good attitude I wanted to see"
+    burn "Now, I shall take my leave and I better see you at the office"
+    $ burns_face = "normal"
+    $ ashley_face = "confuset"
+    ashley ". . . . .right way , sir"
+    $ ashley_story += 1
+    hide burn_base onlayer screens at left with dissolve
+    hide ashley_base onlayer screens at right with dissolve
+    jump bathroom
+
+
+
+
+
+
+
+label ask_allison_ashley_waist:
+    $ main_hall_map.rem(hallway_allison_loc)
+    show allison_base onlayer screens at right with dissolve
+    show burn_base onlayer screens at left with dissolve
+
+    $ burns_face = "normal_t"
+    burn "Hello allison, I need to ask you something"
+    $ burns_face = "normal"
+    $ allison_face = "normalt"
+    allison "Uhm, depends on what it is"
+    $ burns_face = "normal_t"
+    $ allison_face = "normal"
+    burn "It's related to Ashley"
+    $ burns_face = "normal"
+    $ allison_face = "normalt"
+    allison "What about Ashley ?"
+    $ burns_face = "normal_t"
+    $ allison_face = "normal"
+    burn "Well.... I want to know what her waist size is"
+    burn "Do you happen to know what her waist size is?"
+    $ burns_face = "normal"
+    $ allison_face = "suprise"
+    pause
+    $ allison_face = "normalt"
+    allison "Oh, I'm not entirely sure, sir. She is possibly 33 inch or 32, looking at her waist. It sure is small.. compared to mine... "
+    $ burns_face = "normal_t"
+    $ allison_face = "normal"
+    burn ".... Thanks. I hope you are right about this"
+    burn "Better go ask the other maid... to be precise.."
+    $ burns_face = "normal"
+    $ allison_face = "normal"
+    $ main_hall_map.discover(hallway_allison_loc) 
+    $ ashley_waist += 1
+    hide allison_base onlayer screens at right with dissolve
+    hide burn_base onlayer screens at right with dissolve
+    jump main_hall
+
+
+label ask_mindy_ashley_waist:
+    $ front_hall_map.rem(fhall_mindy_loc)
+    $ front_hall_map.rem(fhall_smoke_loc)
+    show mindy_base onlayer screens at right with dissolve
+    show burn_base onlayer screens at left with dissolve
+
+    $ burns_face = "normal_t"
+    burn "Hello there, Miss. Mindy"
+    $ burns_face = "normal"
+    $ mindy_face = "normalt"
+    mindy "Hello, sir"
+    $ mindy_face = "normal"
+    $ burns_face = "normal_t"
+    burn "Just quick question..."
+    $ mindy_face = "normalt"
+    $ burns_face = "normal"
+    mindy "Oh. .oh okay"
+    $ mindy_face = "normal"
+    $ burns_face = "hmm"
+    burn "What's Ashley's waist size ?"
+    $ mindy_face = "normalt"
+    $ burns_face = "normal"
+    mindy "Oh my..... uhm.."
+    $ mindy_face = "normal"
+    $ burns_face = "normal"
+    mindy ". . ."
+    burn ". . . "
+    $ mindy_face = "normalt"
+    mindy "32 inch"
+    $ mindy_face = "normal"
+    $ burns_face = "normal_t"
+    burn "Bye."
+    $ burns_face = "normal"
+    burn "*I'll go with that as an answer*"
+    "Burns quickly leaves without a bye"
+    $ ashley_waist += 1
+    hide mindy_base onlayer screens at right with dissolve
+    hide burn_base onlayer screens at left with dissolve   
+    $ front_hall_map.discover(fhall_mindy_loc)
+    $ front_hall_map.discover(fhall_smoke_loc)
+    jump front_hall

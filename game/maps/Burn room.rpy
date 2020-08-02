@@ -118,6 +118,82 @@ label burn_room_seller:
             $ mr_burns.got_cash(35)
             jump burn_room_seller
 
+        "{color=#bf2b21} BUY ~ {/color} Ashley business outfit" if ashley_story == 9:
+            $ burns_face = "hmm"
+            burn "Ahem"
+            burn "I heard you sell clothes aswell ? Mr. Seller"
+            $ burns_face = "normal"
+            $ seller_face = "happy"
+            seller "Ahhh yes I do"
+            $ burns_face = "normal"
+            $ seller_face = "normal"
+            seller "What are you looking for exactly ? Sir"
+            $ burns_face = "normal_t"
+            burn "A business outfit . ."
+            $ burns_face = "normal"
+            seller "For whom? sir? what's her waist size?"
+            $ burns_face = "normal_t"
+            burn ". . . waist size? why you need to know this?"
+            $ burns_face = "normal"
+            seller "For measurement purpose sir, and her needs"
+            $ burns_face = "hmm"
+            burn ".. I. . .well you see..*You seriously asking me to ask the rude Ashley her waist size?...*"
+            burn "You know what, you just hang onto that , will you?"
+            $ burns_face = "normal"
+            $ seller_face = "happy"
+            seller "Sure"
+            burn "I should probably ask the other maid about her waist size...."
+            $ ashley_story += 1
+            jump burn_room_seller
+
+        "{color=#bf2b21} BUY ~ {/color} Ashley business outfit $ 100 " if ashley_waist == 2:
+            $ burns_face = "normal_t"
+            burn "I'm back"
+            $ seller_face = "happy"
+            burn "and waist size is 32 inch"
+            $ burns_face = "normal"
+            $ seller_face = "normal"
+            seller "Hmm"
+            seller "Ok, I'll sell it for $ 100 "
+            burn " . . ."
+            if mr_burns.cash < 99:
+                burn "*Don't have enough money to buy this business outfit, damn.*"
+                $ burns_face = "hmm"
+                burn "Well..... I'll come back to you later, got something else to do "
+                $ burns_face = "normal"
+                $ seller_face = "sad"
+                seller "You always got something else to do, sir "
+                $ burns_face = "normal_t"
+                burn "Yes, way more important then this non sense business suit to be frank with you *... not really THIS SUIT IS IMPORTANT..... IT WILL ALLOW ME TO.... tangle..oh fiddlesticks*"
+                burn "Well, I shall take my leave"
+                $ burns_face = "normal"
+                seller "Come back anytime, sir"
+                jump burn_room_seller
+            else:
+                burn "*Good thing, I got money to buy this*"
+                $ burns_face = "normal_t"
+                $ seller_face = "normal"
+                burn "I'll buy it, give it already"
+                $ burns_face = "normal"
+                $ seller_face = "happy"
+                seller "Yes, of course but hold on sir, I have to craft this suit "
+                seller "You will have to wait the next day for the delivery to arrive at your mail."
+                seller "It will be there in nick of time, sir"
+                $ burns_face = "normal_t"
+                $ seller_face = "sad"
+                burn "Alrite, what ever. Just take my money and I shall take my leave here Mr. Seller"
+                $ burns_face = "normal"
+                $ seller_face = "happy"
+                seller "Anytime, sir."
+                $ renpy.notify("- 100 cash")
+                $ mr_burns.lose_cash(100)
+                $ ashley_waist += 1
+                $ ashley_story += 1
+                jump burn_room_seller
+
+
+
+
         "{color=#59ab1a} SELL ~ {/color} Default Sword - $ [default_sword.price]" if player.bags[0].exist(default_sword, 1):
             seller "I'll take it for [default_sword.price]"
             burn "Ok"
@@ -182,6 +258,16 @@ label burn_room_bed:
                 scene burn room blur with dissolve
                 "Ah, my back feels nice"
                 jump burn_room
+
+            if ashley_waist == 3 and ashley_story == 11 and mail_ashley_business_suit == False:
+                scene black with dissolve
+                pause
+                "Next morning"
+                "{color=#d61f0b}Alert {/color}: A delivery has arrived to the mail box."
+                $ mail_ashley_business_suit = True   
+                scene burn room blur with dissolve
+                "Ah, my back feels nice"
+                jump burn_room            
 
             else:
                 if seller_npc == True:

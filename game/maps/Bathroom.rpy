@@ -37,6 +37,9 @@ label bathroom:
     if ashley_story == 3:
         $ bathroom_map.rem(bathroom_ashley_loc)
         $ ashley_story += 1
+    if ashley_story == 8:
+        $ bathroom_map.discover(bathroom_ashley_loc)
+        $ ashley_story += 1     
 
     scene washroom bg
    # show bathroom_air
@@ -99,8 +102,13 @@ label bathroom_ashley:
     # if chamber_access == False and ashley_story == 2:
     #     burn "I have not unlocked the Chamber yet to execute my brilliant plan and it's better I talk to her next day"
     #     jump bathroom
+    if ashley_story == 9:
+        burn "Should probably talk to Weylon again"
+        burn "Need to get her back to the chamber again"
+        jump bathroom
 
-
+    if player.bags[0].exist(ashley_business_suit, 1):
+        jump give_ashley_business_suit
     else:
         burn "Talk to her later, not now"
     #    burn "Triggers first event scene dialogue."

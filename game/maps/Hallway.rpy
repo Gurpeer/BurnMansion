@@ -192,6 +192,9 @@ label hallway_redgem:
         jump main_hall
 
 label hallway_allison:
+    if ashley_story == 10 and ashley_waist == 0:
+        jump ask_allison_ashley_waist
+
     if allison_story == 0:
         $ main_hall_map.rem(hallway_allison_loc)
         jump allison_event1

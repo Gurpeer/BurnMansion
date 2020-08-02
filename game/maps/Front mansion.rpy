@@ -96,6 +96,17 @@ label fmansion_guard:
     jump front_mansion
 
 label fmansion_mail:
+    if mail_ashley_business_suit == True:
+
+        "There is a item in the mail"
+        show ashley_business_outfit_item_frame onlayer screens
+        "Obtained Ashley's Business Suit"
+        hide ashley_business_outfit_item_frame onlayer screens
+        $ player.got(ashley_business_suit, 1)        
+        $ ashley_waist += 1
+        $ mail_ashley_business_suit = False
+        jump front_mansion
+
     burn "Nothing in the mailbox"
     jump front_mansion
 
@@ -114,7 +125,7 @@ label fmansion_bluegem:
     "Obtained a blue diamond"
     hide bluegem_item_frame onlayer screens
     $ front_mansion_map.rem(fmansion_bluegem_loc)
-    $ player.got(blue_gem, 1)
+    $ player.got(ashley_business_suit, 1)
     jump front_mansion
 
 

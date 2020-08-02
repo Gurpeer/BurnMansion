@@ -104,6 +104,14 @@ default cat_instrument = item(
     "This is a personal item made to call out Scratchy",
 )
 
+
+default ashley_business_suit = item(
+    "Ashley Business Suit",
+    0,
+    "items/icons/ashley_business_outfit_icon.png",
+    "A outfit for her to wear at the Office",
+)
+
 default ladder_home = item(
     "Ladder",
     0,
