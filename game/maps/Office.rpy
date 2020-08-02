@@ -311,6 +311,7 @@ label office_ashley:
         "Outfit":
             $ burns_face = "normal_t"
             burn "How'd you like your new outfit ?"
+            $ burns_face = "normal"
             $ ashley_face = "normalt"
             ashley "Looks great, sir."
             ashley "I always dreamed of feeling like a CEO in suit, and this just fits the taste"

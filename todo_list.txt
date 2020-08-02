@@ -10,3 +10,10 @@
 Bugs
 -----
 * Using Pause function during label scene reactivates clicklable object in the map, you can click on them and you will be stuck.
+
+* I added the Seller npc at Burn's room. 
+There is a variable call seller_npc = False. Everytime burn ask weylon to summon him.
+The variable becomes True and he is summoned in Burn's room. Howver, removing him once burn goes to sleep and use rem function 
+and change variable to False. He is still in Burn's room regardless. You can test it out and trigger him once you talk to Ashley from the washroom, after that. Talk to Weylon, the option to call him will unlock.
+
+
