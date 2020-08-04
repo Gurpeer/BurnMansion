@@ -93,6 +93,9 @@ label fhall_mindy:
     if ashley_story == 10 and ashley_waist == 1:
         jump ask_mindy_ashley_waist
 
+    if mindy_story == 0:
+        jump mindy_event1
+
     if ashley_story == 2 and ask_instrument == 0:
         $ front_hall_map.rem(fhall_mindy_loc)
         $ front_hall_map.rem(fhall_smoke_loc)
@@ -131,7 +134,7 @@ label fhall_mindy:
         jump front_hall
 
 
-    burn "."
+    burn "I should leave her be for now"
     jump front_hall
 
 # label fhall_entrance:

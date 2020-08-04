@@ -195,7 +195,7 @@ label burn_room_seller:
                 $ burns_face = "normal"
                 $ seller_face = "happy"
                 seller "Yes, of course but hold on sir, I have to craft this suit "
-                seller "You will have to wait the next day for the delivery to arrive at your mail."
+                seller "You will have to wait the next day for the delivery to arrive at your mail outside"
                 seller "It will be there in nick of time, sir"
                 $ burns_face = "normal_t"
                 $ seller_face = "sad"

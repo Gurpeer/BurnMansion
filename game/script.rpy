@@ -64,6 +64,9 @@ default seller_npc = False
 ## Allison Event story
 default allison_story = 0
 
+## Mindy Event Story
+default mindy_story = 0
+
 ## Ashley Event Story
 default ashley_story = 0
 default ashley_dominance = 0

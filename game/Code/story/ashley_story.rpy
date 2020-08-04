@@ -474,7 +474,7 @@ label chamber_ashley_scene:
 
 
 label ashley_scene_leave:
-    if left_leg_pain == 4 or right_leg_pain == 4 and ashley_dominance == 0:
+    if left_leg_pain == 4 and right_leg_pain == 4 and ashley_dominance == 0:
         $ ashley_dominance += 1
         "You have increased Ashley's dominance by [ashley_dominance]"
     # if ashley_scene_face == "ahego3" and ashley_dominance == "2"
@@ -544,11 +544,11 @@ label give_ashley_business_suit:
     $ burns_face = "normal"
     $ ashley_face = "normalt"
     ashley "Wait, you mean the offer was real ?"
-    $ burns_face = "laugh"
+    $ burns_face = "smirkleft"
     $ ashley_face = "confuse"
-    burn "*tf... ba .. Bahahahaha* cough.. co.."
+    burn "*tf.. ba hehehe*.."
     pause
-    $ burns_face = "normal"
+    $ burns_face = "smirkright"
     burn "only if you knew.*"
     pause
     $ burns_face = "normal_t"
