@@ -93,6 +93,43 @@ label fhall_mindy:
     if ashley_story == 10 and ashley_waist == 1:
         jump ask_mindy_ashley_waist
 
+    if ashley_story == 2 and ask_instrument == 0:
+        $ front_hall_map.rem(fhall_mindy_loc)
+        $ front_hall_map.rem(fhall_smoke_loc)
+        show burn_base onlayer screens at left with dissolve
+        $ burns_face = "normal"
+        $ burns_hands = "3"
+        show mindy_base onlayer screens at right with dissolve 
+        $ burns_face = "normal_t" 
+        burn "*Ahem*"
+        burn "You.. happen to see any instrument sort of looking piece around ?"
+        $ burns_face = "normal"
+        $ mindy_face = "hmm"
+        pause
+        $ mindy_face = "normalt"
+        mindy "Uhm, I don't think so sir, I don't think I've seen such piece around here. Might have to ask Allison about such instrument piece"
+        mindy "She is into music"
+        mindy "Music is her life, even her puss.... "
+        mindy "Anyw.. anyway sir, I recommand asking Allison"
+        $ mindy_face = "normal"
+        $ burns_face = "smirkleft"
+        burn "*She is into Music? hmm.. very interesting*"
+        $ burns_face = "smirkright"
+        pause
+        $ burns_face = "normal_t"
+        burn "Ok, I shall be off then, thanks for the very light information dear"
+        $ mindy_face = "normalt"
+        mindy "uh... no problem sir, really"
+        $ mindy_face = "normal"
+        $ burns_face = "normal"
+        $ ask_instrument += 1
+        hide mindy_base onlayer screens at right with dissolve 
+        $ front_hall_map.discover(fhall_mindy_loc)
+        $ front_hall_map.discover(fhall_smoke_loc)
+        hide burn_base onlayer screens at left with dissolve 
+
+        jump front_hall
+
 
     burn "."
     jump front_hall

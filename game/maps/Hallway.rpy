@@ -133,11 +133,11 @@ label hallway_rathole:
         weylon "Well, that settles it."
         weylon "Sir, he will activate it, but it'll work next day."
         burn ". . . ."
-        burn "*what did I just witnes ?*"
+        burn "*what did I just witness ?*"
         weylon "Sir ?"
         $ burns_face = "normal_t"
         burn "*AHEM*, ok"
-        burn "You may leave Weylon and you Scratchy... *I probably need to find some sort of tool to communicate with this Cat*"
+        burn "You may leave Weylon and you too Scratchy... *I probably need to find some sort of tool to communicate with this Cat*"
         $ burns_face = "normal"
         hide scratchy_base onlayer screens at right
         hide weylon normal onlayer screens at weylon_flip_position
@@ -200,6 +200,89 @@ label hallway_allison:
         jump allison_event1
     else:
         burn "I already talked to her.. need to find ways to make big money !"
+
+    if ask_instrument == 1:
+        $ main_hall_map.rem(hallway_allison_loc)
+        show burn_base onlayer screens at left with dissolve
+        $ burns_face = "normal"
+        $ burns_hands = "3"
+        show allison_base onlayer screens at right with dissolve
+        $ burns_face = "normal_t"
+        burn "Hello Allison"
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison "Hello, sir"
+        $ burns_face = "hmm"
+        $ allison_face = "normal"
+        burn "I heard you like Music ?"
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison "Yes I do !"
+        allison "Hold on, how you know I'm into music ?"
+        $ burns_face = "normal_t"
+        $ allison_face = "normal"
+        burn "Well, like I said. I just heard . . nothing else "
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison ". . ."
+        allison "What's my favorite instrument ?"
+        $ burns_face = "normal_t"
+        $ allison_face = "normal"
+        burn ". . . uhm flute ?"
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison "No . . It's sexaphone"
+        allison "The pure and the beaut. ."
+        $ burns_face = "normal"
+        $ allison_face = "normal"
+        burn "*oh boy, I don't want to listen to this little fuzzy stories on beauty about instrument...*"
+        $ burns_face = "hmm"
+        burn "Look here, Allison. I'm not here to listen to your god d... wonderful story, I'm in a hurry here"
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison "Then. . . what exactly are you here for then? hmpt"
+        $ burns_face = "normal_t"
+        $ allison_face = "normal"
+        burn "Looking for this missing instrument piece that can call Scratchy"
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison ". . . the pyscho looking cat? really"
+        $ burns_face = "normal_t"
+        $ allison_face = "normal"
+        burn "Yes the pyscho looking cat, Miss. Allison"
+        $ burns_face = "normal"
+        $ allison_face = "angry"
+        pause
+        $ allison_face = "normalt"
+        allison "He is really dangerous you know... he"
+        $ burns_face = "hmm"
+        $ allison_face = "confuse"
+        burn "ALLISON, I'm asking a question here"
+        $ burns_face = "angry"
+        $ allison_face = "confuset"
+        allison "Oh, yes. Sorry, I just.."
+        $ burns_face = "angry_t"
+        $ allison_face = "confuse"
+        burn "Answer the question, just stop blabbering. Getting on my nerve already !"
+        $ burns_face = "angry"
+        $ allison_face = "confuset"
+        allison "Sir, from what I remember. I gave it away to this mystery mask man in a white suit"
+        $ burns_face = "smirkleft"
+        $ allison_face = "confuse"
+        burn "*.. this whole time, the seller had it... *"
+        $ burns_face = "hmm"
+        $ allison_face = "confuse"
+        burn "Thanks, bye"
+        $ burns_face = "normal"
+        $ allison_face = "normalt"
+        allison "Wait sir. .  I"
+        burn "*NOPE*"
+        $ ask_instrument += 1
+        hide burn_base onlayer screens at left with dissolve
+        hide allison_base onlayer screens at right with dissolve  
+        $ main_hall_map.discover(hallway_allison_loc)
+        jump main_hall     
+
     jump main_hall
 
 label hallway_sword:

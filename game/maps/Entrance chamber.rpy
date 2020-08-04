@@ -23,7 +23,7 @@
 #     repeat
 
 default chamber_entrance_door_loc = place("Locked Door", (602, 192), Jump('chamber_entrance_door'), "location/chamber entrance/chamber entrance door.png")
-default chamber_entrance_exit_loc = place("Exit entrance", (755, 1047), Jump('office'), "location/chamber entrance/chamber exit.png")
+default chamber_entrance_exit_loc = place("Exit entrance", (755, 1047), [Play("music", "audio/mansion_draft1.mp3"), Jump('office')], "location/chamber entrance/chamber exit.png")
 
 # default office_fire_loc = place("fire", (0, 0), None, "office_fire")
 

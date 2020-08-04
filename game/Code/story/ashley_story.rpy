@@ -75,6 +75,7 @@ label ashley_event1:
     $ ashley_face = "angryt"   
     $ burns_face = "laugh"    
     ashley "Screw you old man"
+    ashley "It seems I gotten adjusted to this lifestyle after a while, since nothing bad has really happened. Seems like Burn isn't really the dominate guy at all, just need to find opportunity to catch him make any moves on me"
     ""
     hide burn_base onlayer screens with dissolve
     ""
@@ -256,7 +257,9 @@ label chamber_ashley_scene:
         "Whip her left leg":
             if left_leg_pain == 3:
                 show left_leg_whip
+                pause
                 $ ashley_scene_face = "ouch"
+                hide left_leg_whip
                 ashley "Ouch. .  *I see my bruise now... but.. it kinda feels good?*"
                 $ ashley_leftpain = "leftleg"
                 $ ashley_scene_face = "ahego"
@@ -269,6 +272,8 @@ label chamber_ashley_scene:
 
             else:
                 show left_leg_whip
+                pause
+                hide left_leg_whip
                 $ ashley_scene_face = "ouch"
                 ashley "ow...."
                 $ ashley_scene_face = "please"           
@@ -279,6 +284,7 @@ label chamber_ashley_scene:
         "Whip her right leg":
             if right_leg_pain == 3:
                 show right_leg_whip
+                pause
                 $ ashley_scene_face = "ouch"
                 ashley "Ouch. .  . . this is feeling good ?.. NO I must not admit it*"
                 $ ashley_rightpain = "rightleg"
@@ -292,6 +298,7 @@ label chamber_ashley_scene:
 
             else:
                 show right_leg_whip
+                pause
                 $ ashley_scene_face = "ouch"
                 ashley "ow...."
                 $ ashley_scene_face = "please"           
@@ -328,7 +335,24 @@ label chamber_ashley_scene:
                 ashley ". . . ."
                 jump chamber_ashley_scene
 
-        "Take off her panty":
+        "????????" if ashley_dominance < 5:
+            "Not unlocked"
+            jump chamber_ashley_scene
+
+        "????????" if ashley_dominance < 5:
+            "Not unlocked"
+            jump chamber_ashley_scene
+
+
+        "????????" if ashley_dominance < 5:
+            "Not unlocked"
+            jump chamber_ashley_scene
+
+        "????????" if ashley_dominance < 5:
+            "Not unlocked"
+            jump chamber_ashley_scene
+
+        "Take off her panty" if ashley_dominance > 5:
             if ashley_dominance > 5:
                 burn "Let's get that panty off, got enough dominace on her to do it"
                 $ ashley_scene_clothe = "none"
@@ -341,7 +365,7 @@ label chamber_ashley_scene:
                 jump chamber_ashley_scene
 
 
-        "Vibrator":
+        "Vibrator" if ashley_dominance > 6:
             if ashley_dominance > 6 and ashley_scene_clothe == "none":
                 show pic ashley vibrator
                 burn "I guess, this is where it should simulate her"
@@ -380,7 +404,7 @@ label chamber_ashley_scene:
                 "Don't have such dominance to do it"
                 jump chamber_ashley_scene
 
-        "Command to open her legs":
+        "Command to open her legs" if ashley_dominance > 8:
             if ashley_dominance > 8:
                 burn "open your legs Ashley"
                 ashley "Yes, [ashley_call_burn]" 
@@ -390,7 +414,7 @@ label chamber_ashley_scene:
                 burn "Don't have such dominance yet to command her"
                 jump chamber_ashley_scene
 
-        "Penetrate":
+        "Penetrate" if ashley_dominance > 10:
             if ashley_dominance > 10 and ashley_scene_pose == "2" and ashley_scene_clothe == "none":
                 show pic ashley penis
                 burn "This is about the right position"

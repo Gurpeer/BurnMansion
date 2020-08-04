@@ -67,6 +67,7 @@ default allison_story = 0
 ## Ashley Event Story
 default ashley_story = 0
 default ashley_dominance = 0
+default ask_instrument = 0
 default mail_ashley_business_suit = False
 default ashley_waist = 0
 default ashley_call_burn = "Sir"

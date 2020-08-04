@@ -24,6 +24,8 @@ image left_leg_whip:
     .1
     "char/ashley/scene1/left_whip3.png"
     .1
+    .5
+    repeat
 
 image ashley_penetrate:
     "char/ashley/scene1/ashley_penetrate1.png"
@@ -50,6 +52,8 @@ image right_leg_whip:
     .1
     "char/ashley/scene1/right_whip3.png"
     .1
+    .5
+    repeat
 
 image ashley_vibrator:
     "char/ashley/scene1/vibrator1.png"

@@ -138,7 +138,7 @@ label story_1:
     burn "Preposterous !"
     scene black
     centered "{=scene_text}Burns proceed to throw something at weylon's face{/=scene_text}" with dissolve
-    scene burn_office blur with vpunch
+    scene office blur with vpunch
     $ burns_face = "angry"
     show burn_base at left
     show weylon scared at right with dissolve
@@ -198,6 +198,7 @@ label story_1:
     hide burn with dissolve
     pause
     centered "{=scene_text}Off to pester now.{/=scene_text}" with dissolve
+    play music "audio/mansion_draft1.mp3"
 
     jump office
 

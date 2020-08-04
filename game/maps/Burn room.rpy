@@ -28,6 +28,13 @@ image bubble_tank:
     repeat    
 
 
+screen cash_text():
+    vbox:
+        xalign .5
+        yalign .1
+        frame:
+            text "You got $ [mr_burns.cash]"
+
 
 default burn_room_sword_loc = place("sword", (53, 484), Jump('burn_room_sword'), "maps/burn room/knight sword.png")
 default burn_room_camera_loc = place("camera", (1419, 727), Jump('burn_room_camera'), "maps/burn room/camera.png")
@@ -75,24 +82,35 @@ label burn_room_seller:
     hide screen map
     scene burn room blur
     show seller_base at seller_position 
+    show screen cash_text
     show burn_base at left
     $ burns_face = "normal"
     $ seller_face = "normal"
     menu:
-        "{color=#bf2b21} BUY ~ {/color} Scratchy Personal Instrument $ 85" if not player.bags[0].exist(cat_instrument, 0):
+        "{color=#bf2b21} BUY ~ {/color} Scratchy Personal Instrument $ 85" if not player.bags[0].exist(cat_instrument, 0) and ask_instrument == 2:
+            $ burns_face = "normal_t"
             burn "Is this the instrument that call Scratchy?"
+            $ burns_face = "normal"
+            $ seller_face = "happy"
             seller "Yes"
+            $ burns_face = "normal_t"
             burn "Why you even have this item ? "
+            $ burns_face = "normal"
+            $ seller_face = "sad"
             seller "Scratchy personally left it to me to call him, but I never did and have no use for it"
             seller "So, I just decided to sell it "
             burn ". . . ."
             seller ". . . "
+            $ burns_face = "hmm"
             burn "Just give me the damn instrument, I'll buy it"
             if mr_burns.cash < 86:
+                $ burns_face = "smirkleft"
                 burn "Shit. . ."
                 seller "Sir ?"
+                $ burns_face = "normal_t"
                 burn "... *I don't have the cash to buy this..*"
                 burn "Actually, you know what. Second thought, I'll come back and buy it later"
+                $ burns_face = "normal"
                 seller "Ok"
                 jump burn_room_seller
             else:
@@ -218,7 +236,8 @@ label burn_room_seller:
             jump burn_room_seller
     
 
-        "Leave":       
+        "Leave":
+            hide screen cash_text
             jump burn_room
 
     jump burn_room

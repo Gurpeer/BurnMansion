@@ -1,10 +1,10 @@
 ﻿image bird_move:
     "maps/office/office_bird.png"
     xpos 800 yalign .2
-    linear 4 xpos renpy.random.randint(240,315) yalign .2
+    linear 7 xpos renpy.random.randint(280,315) yalign .2
     pause 2
     xpos 800 yalign .2
-    linear 4 xpos renpy.random.randint(260,353) yalign .3
+    linear 7 xpos renpy.random.randint(235,338) yalign .3
     pause 2
     repeat
 
@@ -106,26 +106,29 @@ label office_weylon:
             $ burns_face = "laugh"
             burn "HA, you know what I want, WAIT. Why do you know this.. ?"
             $ burns_face = "normal"
-            weylon "Hm.. welll. . . . *ahem* SIR, as I was saying, make her meet your coniditon. However if she show some sort of resistent and tries to do something like calling the cops, I have your back on that."
-            weylon "We can lockdown the mansion and she wouldn't be able to call the police and have her gass out, and have her in your chamber if you have unlocked it already"
+            weylon "Hm.. welll. . . . *ahem* SIR, as I was saying, make her meet your condition. However if she show some sort of resistent and tries to do something like calling the cops, I have your back on that."
+            weylon "We can lockdown the mansion and she wouldn't be able to call the police. Gass her out, and have her in your chamber if you have unlocked it already"
             weylon "However, there is a slight problem.."
             burn "? . ."
             weylon "The gas isn't turned on properly"
-            weylon "We need to call in Scratchy to get him to go thro the small rat tunnel and activate it so I can trigger it with my remote"
+            weylon "We need to call in Scratchy to activate it so I can trigger the gass with my remote"
             $ burns_face = "hmm"
             burn "Wait, Scratchy?... you mean the pychopath looking cat with MUSCLE"
             $ burns_face = "normal"
             weylon "Yes, he lives in this mansion, just hiding in some sneaky location"
-            weylon "But, we can call him out and get him to activate the gas"
+           # weylon "But, we can call him out and get him to activate the gas"
             $ burns_face = "normal_t"
             burn "Where can I find this cat ?"
             $ burns_face = "normal"
             weylon "You need a special instrument to call him"
-            $ burns_face = "normal_t"
-            burn ".... ok, where exactly is this instrument tool ?"
             $ burns_face = "normal"
-            weylon "There is this seller that has the instrument which you can buy"
-            weylon "You can ask me anytime when you want to call the Seller over"
+            weylon "But, I do not know where the instrument is. You probably will have to find it"
+            burn "*.... I could probably ask around to see if they have seen it or not*"
+            # burn ".... ok, where exactly is this instrument tool ?"
+            # $ burns_face = "normal"
+            # weylon "There is this seller that has the instrument which you can buy"
+            # weylon "You can ask me anytime when you want to call the Seller over"
+            # $ burns_face = "normal_t"
             $ burns_face = "normal_t"
             burn "Okay anyways"
             burn "I like this, be sure you make no mistake Weylon"
@@ -177,8 +180,12 @@ label office_weylon:
 
         "Scratchy Instrument" if player.bags[0].exist(cat_instrument, 1) and ashley_story == 2:
             burn "I have the instrument.. how do I call him ?"
-            weylon "There is a little tiny hole at the hallway, go near it and call him with the instrument you have"
-            burn "Ok"
+            weylon "I'm not sure sir . . . there is a specfic place to call him"
+            burn "*Useles...*"
+            $ burns_face = "angry_t"
+            burn "USELESS !!"
+            $ burns_face = "normal"
+            burn "*ahem..*"
             jump office_weylon
 
         "Firecamp" if office_firecamp_key == True:
@@ -272,6 +279,7 @@ label office_firecamp:
         jump chamber_entrance
 
     elif office_firecamp_open == True:
+        play music "audio/Melancholia.mp3"
         jump chamber_entrance
 
     else:
