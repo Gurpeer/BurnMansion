@@ -136,6 +136,25 @@ label burn_room_seller:
             $ mr_burns.got_cash(35)
             jump burn_room_seller
 
+        "{color=#59ab1a} SELL~ {/color} Shield - $ [default_shield.price]" if player.bags[0].exist(default_shield, 1):
+            $ burns_face = "normal_t"
+            burn "Selling this Shield "
+            $ burns_face = "normal"
+            $ seller_face = "happy"
+            seller "Ooohhh hooo, now this is some quality looking piece"
+            burn "*... this shield was really cheap from where I brought it..... quality?.. seriously*"
+            burn "135 bucks for this"
+            $ burns_face = "normal"
+            $ seller_face = "normal"
+            seller "I'll take it"
+            $ burns_face = "normal_t"
+            $ seller_face = "happy"
+            burn "Ok"
+            $ burns_face = "normal"
+            $ player.drop(default_shield, 1)
+            $ mr_burns.got_cash(135)
+            jump burn_room_seller
+
         "{color=#bf2b21} BUY ~ {/color} Ashley business outfit" if ashley_story == 9:
             $ burns_face = "hmm"
             burn "Ahem"

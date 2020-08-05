@@ -167,6 +167,45 @@ label hallway_doomarmor:
     jump main_hall
 
 label hallway_shield:
+    if allison_story == 3:
+        show jill_base onlayer screens at left with dissolve:
+            xalign .27
+            yalign .9
+            xzoom -1
+        show burn_base onlayer screens at left with dissolve
+
+        $ burns_face = "normal_t"
+        burn "Pick this up, and you can leave"
+        $ burns_face = "normal"
+        $ jill_face = "talk"
+        jill "it doesn't look very heavy. ."
+        $ burns_face = "angry"
+        $ jill_face = "normal"
+        burn ". . ."
+        $ burns_face = "angry_t"
+        $ jill_face = "normal"
+        burn "Just do what I say and PICK UP THE SHIELD"
+        $ burns_face = "smirkleft"
+        $ jill_face = "talk"
+        jill "Ok, sir"
+        jill "*Jill picks up the shield*"
+        $ burns_face = "normal"
+        $ jill_face = "normal"
+        $ main_hall_map.rem(hallway_shield_loc)
+        show shield_item_frame onlayer over_screens
+        "A shield !"
+        hide shield_item_frame onlayer over_screens
+        $ player.got(default_shield, 1)   
+        ""
+        $ burns_face = "normal"
+        $ jill_face = "talk"
+        jill "Now sir, I should head back"
+        $ jill_face = "normal"
+        $ allison_story += 1
+        hide burn_base onlayer screens at left with dissolve
+        hide jill_base onlayer screens at left with dissolve
+        jump main_hall
+
     burn "Nothing too special about this shield"
     burn "Looks sellable, and worth a decent price"
     burn "But this thing is heavy.... how will I pick this up?"

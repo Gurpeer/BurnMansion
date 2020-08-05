@@ -69,6 +69,13 @@ default default_sword = item(
     "A basic default sword",
 )
 
+default default_shield = item(
+    "Default Shield",
+    135,
+    "items/icons/shield_icon.png",
+    "A basic default shield",
+)
+
 default spa_camera = item(
     "A spa camera",
     0,

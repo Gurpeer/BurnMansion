@@ -75,7 +75,7 @@ label ashley_event1:
     $ ashley_face = "angryt"   
     $ burns_face = "laugh"    
     ashley "Screw you old man"
-    ashley "It seems I gotten adjusted to this lifestyle after a while, since nothing bad has really happened. Seems like Burn isn't really the dominate guy at all, just need to find opportunity to catch him make any moves on me"
+    ashley "*It seems I gotten adjusted to this lifestyle after a while, since nothing bad has really happened. Seems like Burn isn't really the dominate guy at all, just need to find opportunity to catch him make any moves on me*"
     ""
     hide burn_base onlayer screens with dissolve
     ""
@@ -216,7 +216,7 @@ label ashley_event2:
 label chamber_ashley_bedscene:
     scene black with dissolve
     burn "Argh... my head hurts a bit"
-    burn "Wait, do I hear somethin?"
+    burn "Wait, do I hear something?"
     pause
     $ ashley_scene_face = "angry"
     $ ashley_scene_clothe = "panty"
@@ -248,9 +248,28 @@ label chamber_ashley_scene:
  #   $ ashley_scene_clothe = "panty"
     $ ashley_scene_tit = "base"
     scene bed_scene_chamber
+    show progress_ui
+    if progress_bar == 1:
+        show progress_bar
+    elif progress_bar == 2:
+        show progress_bar2
+    elif progress_bar == 3:
+        show progress_bar3
+    elif progress_bar == 4:
+        show progress_bar4
+    elif progress_bar == 5:
+        show progress_bar5
+
+    if progress_bar == 4:
+        $ ashley_scene_face = "ahego"
+
+    if progress_bar == 5:
+        $ ashley_scene_face = "ahego2"
+        $ ashley_scene_orgasm = "wetclose"
+
     show ashley_scene_base
-    if ashley_scene_face == "ahego3" or ashley_scene_face == "ahego4":
-        burn "She seems pretty much done, kinda exhasted her. Don't think I can continue any further at this point"
+    if progress_bar == 5:
+        burn "She seems pretty much done, I exhasted her. Don't think I can continue any further at this point"
         jump ashley_scene_leave
     menu:
        # $ gui.navigation_xpos = 200
@@ -273,6 +292,7 @@ label chamber_ashley_scene:
             else:
                 show left_leg_whip
                 pause
+                $ progress_bar += 1
                 hide left_leg_whip
                 $ ashley_scene_face = "ouch"
                 ashley "ow...."
@@ -301,6 +321,7 @@ label chamber_ashley_scene:
                 pause
                 $ ashley_scene_face = "ouch"
                 ashley "ow...."
+                $ progress_bar += 1
                 $ ashley_scene_face = "please"           
                 $ right_leg_pain += 1
                 jump chamber_ashley_scene
@@ -311,7 +332,7 @@ label chamber_ashley_scene:
                 burn "It is already off"
                 jump chamber_ashley_scene
 
-            if ashley_dominance > 3:
+            if ashley_dominance > 2:
                 burn "About time, I take that rope off so I could. . hehe"
                 $ ashley_special_clothe = "none"
                 burn "Nice, there we go . Got it off"
@@ -331,8 +352,8 @@ label chamber_ashley_scene:
                 $ ashley_scene_tit = "none"
                 pause
                 burn "Nice, that felt sort of soft"
-                $ ashley_scene_face = "ahego2"
                 ashley ". . . ."
+                $ progress_bar += 1
                 jump chamber_ashley_scene
 
         "????????" if ashley_dominance < 5:
@@ -463,7 +484,7 @@ label chamber_ashley_scene:
 
         "Leave":
             if ashley_dominance == 0:
-                if left_leg_pain == 4 or right_leg_pain == 4 and ashley_dominance == 0:
+                if left_leg_pain == 2 or right_leg_pain == 2 and ashley_dominance == 0:
                     burn "There we go, punished enough"
                     jump ashley_scene_leave
                 else:
@@ -474,8 +495,8 @@ label chamber_ashley_scene:
 
 
 label ashley_scene_leave:
-    if left_leg_pain == 4 and right_leg_pain == 4 and ashley_dominance == 0:
-        $ ashley_dominance += 1
+    if left_leg_pain > 1 and right_leg_pain > 1 and ashley_dominance == 0:
+        $ ashley_dominance += 2
         "You have increased Ashley's dominance by [ashley_dominance]"
     # if ashley_scene_face == "ahego3" and ashley_dominance == "2"
 

@@ -41,7 +41,7 @@ screen choice(items):
             $ renpy.random.shuffle(items)
 
     vbox:
-        xalign .6
+        xalign .63
         for i in items:
             textbutton i.caption action i.action xsize 500 text_size 28 text_font "0GUI/fonts/Sriracha.ttf" at btn
 

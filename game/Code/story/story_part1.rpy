@@ -104,22 +104,28 @@ label story_1:
     allison "When will our contract end ?"
     $ allison_face = "normal"
     burn "they don't."
-    $ burns_face = "normal"
+    $ burns_face = "smirkleft"
+    $ mindy_face = "sad"
+    $ ashley_face = "sad"
+    $ allison_face = "sad"
     hide burn with dissolve
     hide mindy with dissolve
     hide ashley with dissolve
     hide allison with dissolve
+    scene black with dissolve
+
     pause
-    scene black
-    centered "{=scene_text}Burns leaves the Maid out of his office. Leaving the maid all speechless{/=scene_text}" with dissolve
-    centered "{=scene_text} . . . . {p} Weylon shows up to his office{/=scene_text}" with dissolve
+    "Weylon shows up"
+    # scene black
+    # centered "{=scene_text}Burns leaves the Maid out of his office. Leaving the maid all speechless{/=scene_text}" with dissolve
+    # centered "{=scene_text} . . . . {p} Weylon shows up to his office{/=scene_text}" with dissolve
     scene office blur with dissolve
     show burn_base at left
     show weylon normal at right with dissolve
     $ burns_face = "normal_t"
     burn "Now then Weylon"
     burn "Tell me again about my brilliant plan to recliam what's rightfully mine"
-    $ burns_face = "laugh"
+    $ burns_face = "smirkleft"
     weylon "Certainly sir"
     $ burns_face = "normal"
     # show weylon talk_calm with dissolve
@@ -136,8 +142,11 @@ label story_1:
     $ burns_face = "angry_t"
     # show burn rage with dissolve
     burn "Preposterous !"
+    $ burns_hands = "baseball"
+    pause
     scene black
-    centered "{=scene_text}Burns proceed to throw something at weylon's face{/=scene_text}" with dissolve
+    centered "{=scene_text}Burns proceed to throw baseball at weylon's face{/=scene_text}" with dissolve
+    $ burns_hands = "3"
     scene office blur with vpunch
     $ burns_face = "angry"
     show burn_base at left

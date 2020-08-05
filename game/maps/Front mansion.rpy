@@ -28,12 +28,40 @@ default front_mansion_map = maps(
     )
 
 label front_mansion:
+    if allison_story == 4:
+        $ front_mansion_map.discover(fmansion_guard_loc) 
+        $ allison_story += 1
+
+        
     scene outside mansion bg
     show screen map(front_mansion_map)
     pause
     jump front_mansion
 
 label fmansion_guard:
+
+    if allison_story == 2:
+        $ front_mansion_map.rem(fmansion_guard_loc)  
+        show jill_base onlayer screens at right with dissolve 
+        show burn_base onlayer screens at left with dissolve
+        $ burns_face = "normal_t"
+        burn "I need you to do me a favor"
+        $ burns_face = "normal"
+        $ jill_face = "talk"
+        jill "Sure"
+        $ burns_face = "normal_t"
+        $ jill_face = "normal"
+        burn "Need you to come with me and pick up the heavy shield and you can go back to your dutie"
+        $ burns_face = "normal"
+        $ jill_face = "talk"
+        jill "Ok, sir"
+        $ jill_face = "normal"
+        $ allison_story += 1 
+        hide burn_base onlayer screens at left with dissolve
+        hide jill_base onlayer screens at jill_position with dissolve
+       # $ front_mansion_map.discover(fmansion_guard_loc)
+        jump front_mansion
+
     if guard_dialogue == 0:
         $ front_mansion_map.rem(fmansion_guard_loc)
         $ front_mansion_map.rem(fmansion_guard1_loc)
@@ -92,6 +120,7 @@ label fmansion_guard:
         $ guard_dialogue += 1
     else:
         jill "How is it goin sir"
+
 
     jump front_mansion
 

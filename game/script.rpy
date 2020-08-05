@@ -77,6 +77,9 @@ default ashley_call_burn = "Sir"
 default left_leg_pain = 0
 default right_leg_pain = 0
 
+## progress bar
+default progress_bar = 0
+
 ## Guards
 default guard_dialogue = 0
 

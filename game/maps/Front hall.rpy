@@ -76,7 +76,6 @@ label fhall_king:
 
 label fhall_black_shield:
     burn "This looks sellable"
-    burn "pick up."
     jump front_hall
 
 label fhall_ashley:

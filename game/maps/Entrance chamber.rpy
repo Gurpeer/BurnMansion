@@ -9,18 +9,36 @@
 #     repeat
 
 
-# image office_fire:
-#     "maps/office/fire1.png" with dissolve
-#     .3
-#     "maps/office/fire2.png" with dissolve
-#     .3
-#     "maps/office/fire3.png" with dissolve
-#     .3
-#     "maps/office/fire4.png" with dissolve
-#     .3
-#     "maps/office/fire5.png" with dissolve
-#     .3
-#     repeat
+
+image entrance_chamber_fire:
+    "chamber_fire1"
+    .15
+    "chamber_fire2"
+    .15
+    "chamber_fire3" 
+    .15
+    "chamber_fire4"
+    .15
+    "chamber_fire5" 
+    .15
+    "chamber_fire6"
+    .15
+    repeat
+
+image entrance_chamber_fire_left:
+    "chamber_fire1_left"
+    .15
+    "chamber_fire2_left"
+    .15
+    "chamber_fire3_left" 
+    .15
+    "chamber_fire4_left"
+    .15
+    "chamber_fire5_left" 
+    .15
+    "chamber_fire6_left"
+    .15
+    repeat
 
 default chamber_entrance_door_loc = place("Locked Door", (602, 192), Jump('chamber_entrance_door'), "location/chamber entrance/chamber entrance door.png")
 default chamber_entrance_exit_loc = place("Exit entrance", (755, 1047), [Play("music", "audio/mansion_draft1.mp3"), Jump('office')], "location/chamber entrance/chamber exit.png")
@@ -34,6 +52,8 @@ default chamber_entrance_map = maps(
         # "office_sky",
         # "bird_move",
         # "office_sky_wood",
+        "entrance_chamber_fire_left",
+        "entrance_chamber_fire",
         chamber_entrance_door_loc,
         "chamber insert",
         chamber_entrance_exit_loc,

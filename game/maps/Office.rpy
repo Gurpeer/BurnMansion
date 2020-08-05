@@ -189,14 +189,20 @@ label office_weylon:
             jump office_weylon
 
         "Firecamp" if office_firecamp_key == True:
+            $ burns_face = "normal_t"
             burn "I remember this firecamp would open easily"
             burn "Why isn't it openeing properly?"
+            $ burns_face = "normal"
             weylon "Sir, I added a lock to it, so you would need a key to open it"
+            $ burns_face = "angry_t"
             burn "When did I ever need A KEY!?!?"
+            $ burns_face = "angry"
             weylon "Sir, people were able to go in and out whenever they wanted"
             weylon "and.  . ."
+            $ burns_face = "normal_t"
             burn ". . . . actually you know what"
             burn "Just give me the key"
+            $ burns_face = "normal"
             weylon "Sure, here you go"
             show key_item_frame
             "You obtained a key !"
@@ -276,6 +282,7 @@ label office_firecamp:
         $ player.drop(office_key, 1)
         $ office_firecamp_open = True
     #    $ renpy.notify("Key was used")
+        play music "audio/Melancholia.mp3"
         jump chamber_entrance
 
     elif office_firecamp_open == True:
@@ -316,7 +323,7 @@ label office_ashley:
     $ burns_face = "normal"
     show burn_base at left
     menu:
-        "Compliment her outfit" if ashley_dominance < 2:
+        "Compliment her outfit" if ashley_dominance < 3:
             $ burns_face = "normal_t"
             burn "The outfit suits you"
             $ renpy.notify("Gained one dominance point")
@@ -467,7 +474,9 @@ label office_ashley:
             ashley "? . ."
             burn "Time for your punishment"
             $ ashley_face = "confuset"
+            $ progress_bar = 0
             ashley ". . . yes, sir..."
+            play music "audio/Melancholia.mp3"
             jump chamber_ashley_scene
 
         "Leave":
