@@ -45,12 +45,8 @@ screen notif:
     if len(msg.list):
         timer .2 repeat True action Function(msg.rem)
     vbox:
-        yalign 0.0 yoffset 40
+        align 0.5,1.0 offset 0,-20
         for i in msg.list:
             frame:
                 at notif_t(msg.delay)
                 text "{}".format(i[1])
-    # test button, remove
-    # button:
-    #     text "ssd"
-    #     action Function(msg.msg, "sdsdf")

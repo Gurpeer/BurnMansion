@@ -19,22 +19,34 @@ screen map_stats(m, p = mr_burns):
         button:
             background None foreground None offset -135, 4
             add "stats/ui_quest.png"
-        hbox:
-            offset 40,110 spacing -10
-            button:
-                background None
-                add "stats/ui_settings.png"
-                action ShowMenu("preferences")
-            button:
-                background None
-                add "stats/ui_skip.png"
-                action Skip() alternate Skip(fast=True, confirm=True)
-            button:
-                text "Inv"
-                action ToggleScreen("inventory")
+        # hbox:
+        #     offset 40,110 spacing -10
+        #     button:
+        #         background None
+        #         add "stats/ui_settings.png"
+        #         action ShowMenu("preferences")
+        #     button:
+        #         background None
+        #         add "stats/ui_skip.png"
+        #         action Skip() alternate Skip(fast=True, confirm=True)
+
         hbox:
             offset 200, -14 spacing 0 xalign 0.0
             add "stats/money.png"
             text "{color=#fff}" + str(p.cash) + "{/color}" offset 10, -0
         text "{color=#fff}{size=33}" + m.name + "{/colffa391or}{/size}" xalign 0.0 offset 260, 30
 
+    default inve = False
+    if inve:
+        button:
+            align 0.0,0.0
+            background None
+            add "0GUI/inv/open.png"
+            action SetLocalVariable("inve", False)
+        use inventory
+    else:
+        button:
+            align 0.0,0.0
+            background None
+            add "0GUI/inv/close.png"
+            action SetLocalVariable("inve", True)

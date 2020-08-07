@@ -33,10 +33,12 @@ screen inventory(p = player):
     modal True
     style_prefix "inv"
     vbox:
-        hbox:
+        xalign 0.0
+        vbox:
             if len(p.bags[0].items):
                 for i in p.bags[0].items:
                     button:
+                        background "0GUI/inv/slot.png"
                         tooltip i
                         fixed:
                             fit_first True
@@ -48,6 +50,3 @@ screen inventory(p = player):
                     padding 40,40
                     vbox:
                         text "You have no items"
-        button:
-            text "Close"
-            action ToggleScreen("inventory")
