@@ -54,11 +54,19 @@ screen file_slots(title):
 
         hbox:
             yoffset -300
-            textbutton _("<") action FilePagePrevious() at btn
             button:
+                background None
+                add "0GUI/save/left_arrow_th.png"
+                action FilePagePrevious() at btn
+            button:
+                background Frame("0GUI/save/mdle_th.png", 10,10)
+                ysize 82
                 at btn
                 key_events True
                 action page_name_value.Toggle()
                 input:
                     value page_name_value
-            textbutton _(">") action FilePageNext() at btn
+            button:
+                background None
+                add "0GUI/save/right_arrow_th.png"
+                action FilePageNext() at btn

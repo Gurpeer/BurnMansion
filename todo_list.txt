@@ -1,10 +1,7 @@
 * Inventory UI (Tooltip hover item, non-quantity items)
-* Inventory player.has(item, quantity) 
 * Journal UI
 * Show Item Frame when picking up item
-* Change the load, save arrow UI
 * Quit screen, fix the text 
-* Dialogue box NAME tag
 
 
 Bugs

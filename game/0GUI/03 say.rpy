@@ -19,12 +19,11 @@ screen say(who, what):
             if not renpy.variant("small"):
                 frame:
                     padding 0,0
+                    has fixed
+                    fit_first True
                     add SideImage() xalign 0.0 yalign 1.0
-
-        # if who is not None:
-        #     window:
-        #         id "namebox" xalign 1.0 background None
-        #         text who id "who"
+                    if who is not None:
+                        text who id "who" yoffset 90
 init python:
     config.character_id_prefixes.append('namebox')
     config.character_id_prefixes.append('box')
