@@ -507,7 +507,7 @@ label ashley_scene_leave:
     $ ashley_scene_orgasm = "none"
     $ ashley_scene_face = "normal"
 
-    if ashley_dominance == 1:
+    if ashley_dominance == 2:
         $ burns_face = "normal"
         $ burns_hands = "3"
         $ ashley_face = "confuse"
