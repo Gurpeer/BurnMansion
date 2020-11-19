@@ -117,15 +117,19 @@ label story_1:
     pause
     "Weylon shows up"
     # scene black
+    $ burns_face = "normal"
     # centered "{=scene_text}Burns leaves the Maid out of his office. Leaving the maid all speechless{/=scene_text}" with dissolve
     # centered "{=scene_text} . . . . {p} Weylon shows up to his office{/=scene_text}" with dissolve
     scene office blur with dissolve
     show burn_base at left
-    show weylon normal at right with dissolve
+    show weylon_base at right with dissolve
+    pause
     $ burns_face = "normal_t"
+
     burn "Now then Weylon"
     burn "Tell me again about my brilliant plan to recliam what's rightfully mine"
     $ burns_face = "smirkleft"
+    $ weylon_face = "normal_t"
     weylon "Certainly sir"
     $ burns_face = "normal"
     # show weylon talk_calm with dissolve
