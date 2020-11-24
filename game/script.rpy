@@ -49,6 +49,7 @@ image allison surprise = "char/allison/surprise.png"
 
 image side allison = "char/allison/icon.png"
 
+image gui_input_mc = "gui/mc_input_gui.png"
 
 #chamber stuff
 # default chamber_access = False
@@ -56,6 +57,9 @@ default check_door = False
 default office_firecamp_key = False
 default office_firecamp_open = False
 default chamber_diamond_collected = False
+
+## MC
+default mc_name = "Roger"
 
 ## Seller NPC
 default seller_call = False
@@ -86,7 +90,6 @@ default story_event = 0
 # ## Guards
 # default guard_dialogue = 0
 
-
 define burn = Character("MR BURN", color="#ffff", who_outlines=[ (3, "#000") ], box_box_reverse = True, namebox_xalign=0.0)
 define burn1 = Character("Burn", color="#fe4911", who_outlines=[ (1, "#ffffff") ])
 
@@ -100,6 +103,9 @@ define yes_men3 = Character("YESMEN3", color="#ffff", who_outlines=[ (3, "#000")
 
 define yes_men4 = Character("YESMEN4", color="#ffff", who_outlines=[ (3, "#000") ])
 
+define larry = Character("LARRY", color="#ff4676", who_outlines=[ (3, "#000") ])
+
+define mc = Character("[mc_name]", color="ff6600", who_outlines=[ (3, "#000") ])
 
 define jack = Character("Jack", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
 define jill = Character("Jill", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
@@ -121,7 +127,19 @@ define grace = Character("GRACE", color="#ffff", who_outlines=[ (3, "#000") ])
 #     (0,0), "char/burn/01/hands [burns_hands].png",
 #     (0,0), "char/burn/01/holding [burns_holding].png",
 # )
+screen mc_name_input():
+  hbox:
+    xalign .5
+    yalign .56
 
+    #text "{b}{color=#faebd7}Input:  {/color}{/b}"
+    input:
+      value VariableInputValue("mc_name", default=True, returnable=True)
+      default "TYPE ME"
+      color "#000000"
+     # bold True
+      size 80
+      length 9
 
 # The game starts here.
 

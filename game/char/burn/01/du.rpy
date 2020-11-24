@@ -1,4 +1,8 @@
-﻿default burns_face = "normal"
+﻿transform burn_position_right:
+    xalign 0.7
+    yalign 1.1
+
+default burns_face = "normal"
 default burns_hands = "1"
 default burns_holding = "nothing"
 default burns_accessory = "none"
