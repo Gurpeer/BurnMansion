@@ -1,6 +1,10 @@
 ﻿init offset = -1
 
 ## Confirm screen ##############################################################
+style quit_text is text:
+    size 70
+    color "#ffff"
+  #  spacing 10
 
 screen confirm(message, yes_action, no_action):
     modal True
@@ -11,7 +15,7 @@ screen confirm(message, yes_action, no_action):
         align .9,.8
         xsize 1000 background None
         vbox:
-            label _(message) background None at btn
+            label _(message) text_style "quit_text" background None at btn
             hbox:
                 spacing 100
                 button:

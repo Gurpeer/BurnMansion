@@ -84,17 +84,19 @@ default progress_bar = 0
 default guard_dialogue = 0
 
 
-define burn = Character("Burn", color="#fe4911", who_outlines=[ (3, "#ffffff") ], image="burn", box_box_reverse = True, namebox_xalign=0.0)
-define burn1 = Character("Burn", color="#fe4911", who_outlines=[ (3, "#ffffff") ], image="burn")
-define yes_men = Character("Yes men")
-define jack = Character("Jack", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="jack")
-define jill = Character("Jill", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="jill")
-define mindy = Character("Mindy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="mindy")
-define scratchy = Character("Scratchy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="scrathy")
-define ashley = Character("Ashley", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="ashley")
-define allison = Character("Allison", color="#ff69b4", who_outlines=[ (3, "#ffffff") ], image="allison")
-define seller = Character("Seller", color="#ffff", who_outlines=[ (3, "#ffffff") ], image="seller")
-define weylon = Character("Weylon", color="#006400", who_outlines=[ (3, "#ffffff") ], image="weylon")
+define burn = Character("MR BURN", color="#ffff", who_outlines=[ (3, "#000") ], box_box_reverse = True, namebox_xalign=0.0)
+define burn1 = Character("Burn", color="#fe4911", who_outlines=[ (1, "#ffffff") ])
+define yes_men = Character("Yes men", color="#ffff", who_outlines=[ (3, "#000") ])
+define jack = Character("Jack", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
+define jill = Character("Jill", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
+define mindy = Character("Mindy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
+define scratchy = Character("Scratchy", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
+define ashley = Character("Ashley", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
+define allison = Character("Allison", color="#ff69b4", who_outlines=[ (3, "#ffffff") ])
+define seller = Character("Seller", color="#ffff", who_outlines=[ (3, "#ffffff") ])
+define weylon = Character("Weylon", color="#0e3d00", who_outlines=[ (2, "#ffffff") ])
+
+define grace = Character("GRACE", color="#ffff", who_outlines=[ (3, "#000") ])
 
 # default burns_face = "angry"
 # default burns_hands = "1"

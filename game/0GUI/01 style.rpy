@@ -97,7 +97,7 @@ style default:
     padding(20,20)
     spacing 10
     font "0GUI/fonts/Homer_Simpson.ttf"
-    size 30
+    size 40
     
     color thm.t_idl
     hover_color thm.t_hov
@@ -105,7 +105,7 @@ style default:
     selected_hover_color thm.t_slc_hov
 
 
-    background Frame("0GUI/pat.png", 0, 0, tile=True)
+    background Frame("0GUI/dialogue_frame3.png", 0, 0, tile=False)
     # foreground thm.f_idl
     # hover_foreground thm.f_hov
     # selected_foreground thm.f_slc_idl

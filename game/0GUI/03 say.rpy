@@ -1,6 +1,12 @@
 ﻿init offset = -1
 
 ## Say screen ##################################################################
+style dialogue_text is text:
+    color "#ffff"
+    font "0GUI/fonts/Homer_Simpson.ttf"
+    outlines [ (absolute(3), "#000", absolute(2), absolute(1)) ]
+    #size 30
+
 
 screen say(who, what):
     style_prefix "say"
@@ -14,16 +20,16 @@ screen say(who, what):
             window:
                 id "window"
                 xsize 1000 yminimum 128
-                label what id "what" background None text_size 29 text_font "0GUI/fonts/Sriracha.ttf" foreground None yoffset -5
+                label what id "what" background None text_style "dialogue_text" text_size 50 foreground None yoffset -5
 
             if not renpy.variant("small"):
                 frame:
-                    padding 0,0
+                    padding 0,0 yalign 1.0
                     has fixed
                     fit_first True
                     add SideImage() xalign 0.0 yalign 1.0
-                    if who is not None:
-                        text who id "who" yoffset 90
+        if who is not None:
+            text who id "who" xalign 0.0
 init python:
     config.character_id_prefixes.append('namebox')
     config.character_id_prefixes.append('box')
