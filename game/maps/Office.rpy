@@ -8,6 +8,8 @@
     pause 2
     repeat
 
+image yes_men_office:
+    "images/location/office/yes_men_burn_figure.png"
 
 image office_fire:
     "maps/office/fire1.png" with dissolve
@@ -33,6 +35,7 @@ default office_football_loc = place("football", (30, 928), Jump('office_football
 default office_book_loc = place("book", (76, 863), Jump('office_book'), "maps/office/office_book.png")
 default office_ashley_loc = place("Ashley", (570, 601), Jump('office_ashley'), "maps/office/ashley office fig.png")
 default office_fire_loc = place("fire", (0, 0), None, "office_fire")
+default office_yes_men = place("yesmen", (0,0), None, "yes_men_office")
 
 default office_map = maps(
     "Office",
@@ -50,19 +53,19 @@ default office_map = maps(
         office_fossil_loc,
         office_book_loc,
         office_fire_loc,
+        office_yes_men,
     ]
     )
 
 label office:
-    if ashley_story == 12:
-        $ office_map.discover(office_ashley_loc)
-        $ ashley_story += 1
-
-
+    # if ashley_story == 12:
+    #     $ office_map.discover(office_ashley_loc)
+    #     $ ashley_story += 1
     scene office bg
     show screen map(office_map)
     pause
     jump office
+
 
 label office_desk:
     burn "This desk isn't for sale."
