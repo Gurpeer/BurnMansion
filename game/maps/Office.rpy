@@ -38,7 +38,7 @@ default office_fire_loc = place("fire", (0, 0), None, "office_fire")
 default office_yes_men = place("yesmen", (0,0), None, "yes_men_office")
 
 default office_map = maps(
-    "Office",
+    "OFFICE",
     [
         "office_sky",
         "bird_move",

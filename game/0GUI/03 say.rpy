@@ -68,9 +68,9 @@ screen input(prompt):
 screen quick_menu():
     zorder 100
     if quick_menu:
-        vbox:
+        hbox:
             style_prefix "q"
-            align 1.0, 0.0
+            align 1.0, 0.11
             # textbutton _("Back") action Rollback()
             # textbutton _("History") action ShowMenu('history')
             # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
@@ -80,11 +80,11 @@ screen quick_menu():
             # textbutton _("Q.Load") action QuickLoad()
             button:
                 background None
-                add "stats/ui_settings.png"
+                add "stats/setting_icon.png"
                 action ShowMenu('preferences')
             button:
                 background None
-                add "stats/ui_skip.png"
+                add "stats/forward_icon.png"
                 action Skip() alternate Skip(fast=True, confirm=True)
 init python:
     config.overlay_screens.append("quick_menu")

@@ -4,6 +4,13 @@
 * Quit screen, fix the text 
 
 
+CHANGES
+-----------
+
+* Ability to Show/Hide the UI
+
+
+
 Bugs
 -----
 * Using Pause function during label scene reactivates clicklable object in the map, you can click on them and you will be stuck.

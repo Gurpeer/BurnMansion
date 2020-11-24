@@ -136,6 +136,7 @@ label start:
     $ office_map.rem(office_weylon_loc)
     show screen map(office_map)
   #  show yes_men_burn_figure
+    play music "audio/burn_jukebox.mp3"
     yes_men1 "{i}*Whispering*{/i} ...secret meeting of some sort?"
     yes_men2 "{i}*Muttering*{/i} ...not sure why we got called in for..."
     yes_men3 "{i}*Mumbling*{/i} ...some kinda announcement maybe, but..."
