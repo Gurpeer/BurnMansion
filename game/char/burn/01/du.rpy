@@ -1,12 +1,12 @@
 ﻿transform burn_position_right:
     xalign 0.7
-    yalign 1.1
+    yalign 1.11
 
 default burns_face = "normal"
 default burns_hands = "1"
 default burns_holding = "nothing"
 default burns_accessory = "none"
-image burn_base = Composite((471,730),
+image burn_base = Composite((471,690),
     (0,0), "char/burn/01/base 2.png",
     (0,0), "char/burn/01/face [burns_face].png",
     (0,0), "char/burn/01/hands [burns_hands].png",
